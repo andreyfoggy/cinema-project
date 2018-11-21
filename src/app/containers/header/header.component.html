@@ -1,0 +1,15 @@
+<header>
+  <div class="header wrapper">
+    <img [src]="logoUrl" alt='' >
+    <app-nav></app-nav>
+    <div class="registr">
+      <div class="search">
+        <input [(ngModel)]="search" type="text" placeholder="Поиск"/>
+        <i class="fas fa-search"></i>
+      </div>  
+      <div>
+        <a routerLink="/register"> <i class="far fa-user" ></i></a>
+      </div>
+    </div>
+  </div>  
+</header>

@@ -1,0 +1,15 @@
+.menu ul {
+    width: 300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    flex-wrap: nowrap;
+    a {
+        color: #fff;
+        transition: .5s;
+    }
+    a:hover {
+        //color: #337ab7;
+        color: orange;
+    }
+}
