@@ -10,6 +10,8 @@ import { BookTicketsComponent } from './book-tickets.component';
     BookTicketsRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [BookTicketsComponent]
+  declarations: [
+    BookTicketsComponent
+  ]
 })
 export class BookTicketsModule { }
