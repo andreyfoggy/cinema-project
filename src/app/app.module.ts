@@ -10,7 +10,6 @@ import { CoreModule } from './core/core.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ScheduleModule } from './schedule/schedule.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +22,6 @@ import { ScheduleModule } from './schedule/schedule.module';
     GalleryModule,
     ScheduleModule
   //   EffectsModule.forRoot([]),
-  //   StoreDevtoolsModule.instrument({name: 'store devtools'}),
   //  // StoreModule.forRoot(reducers, {metaReducers}),
   //  // StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
   ],
