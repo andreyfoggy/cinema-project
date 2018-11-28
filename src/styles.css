@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Infant');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 * {
 	margin: 0;
 	padding: 0;
@@ -8,6 +10,9 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+body {
+	background: #e7e4e2;
+}
 .clearfix:after{
 	content: "";
 	display: block;
@@ -16,7 +21,7 @@
 }
 .wrapper {
 	width: 100%;
-	max-width: 960px;
+	max-width: 1020px;
 	margin: auto;
 }
 a {
@@ -27,5 +32,11 @@ input {
 }
 ul,ol {
 	list-style-type: none;
-  }
-
+}
+h1 {
+	font-family: 'Cormorant Infant', serif;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 20px;
+	color: #ffa700;
+}

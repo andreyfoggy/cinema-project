@@ -9,7 +9,10 @@ const routes: Routes = [
   },
   {
     path: '**', redirectTo: ''
-  }
+  },
+  // {
+  //   path: '/poster:ID', component: Po
+  // }
 ];
 
 @NgModule({

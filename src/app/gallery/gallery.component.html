@@ -1,3 +1,11 @@
-<p>
-  FILMS GALLERY...
-</p>
+<section class="wrapper">
+  <h1>Афиша</h1>
+  <ul class="film-list">
+    <div class="item-box" *ngFor="let film of filmList; let i = index; let even = even" [ngClass] = "{even:even}">
+      <app-poster 
+        [item]="film" 
+      >
+      </app-poster>
+    </div>
+  </ul>
+</section>

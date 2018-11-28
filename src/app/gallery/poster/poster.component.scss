@@ -1,0 +1,50 @@
+img {
+    width: 100%;
+    height: auto;
+}
+div {
+    transition:  0.5s;
+}
+.item {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    font-family: 'Open Sans', sans-serif;
+    //border: 3px solid #FFB100;
+}
+.item:hover {
+    cursor: pointer;
+}
+.item:hover  a {
+    color: #FFB100;
+    text-decoration: underline;
+}
+.film-title {
+    height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+        color: #000;
+    }
+}
+.film-poster {
+    
+}
+.premiere-title {
+    background-image:  url("../../../assets/images/premier-background.png") ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    height: 25px;
+    background-color: #ffba00;
+    z-index: 1;
+    text-align: center;
+}

@@ -5,11 +5,10 @@
 	align-items: center;
     flex-wrap: nowrap;
     a {
-        //color: rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
         transition: .5s;
     }
     a:hover {
-        //color: #337ab7;
-        color: orange;
+        color: #FFB100;
     }
 }

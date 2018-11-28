@@ -17,12 +17,16 @@ const routes: Routes = [
     loadChildren: './register/register.module#RegisterModule'
   },
   {
+    path: 'tickets',
+    loadChildren: './book-tickets/book-tickets.module#BookTicketsModule'
+  },
+  {
     path: '**', redirectTo: ''
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{enableTracing: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
