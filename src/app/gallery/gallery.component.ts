@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../shared/services/store.service';
 
 @Component({
   selector: 'app-gallery',
@@ -83,6 +84,11 @@ export class GalleryComponent implements OnInit {
   
   constructor() { }
   
+
+  constructor(private store: StoreService) {
+    let test = store.asynchGetFilms()
+  }
+
   ngOnInit() {
   }
 
