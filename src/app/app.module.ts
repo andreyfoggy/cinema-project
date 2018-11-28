@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { EffectsModule} from '@ngrx/effects';
-import { StoreDevtoolsModule} from '@ngrx/store-devtools';
-import { StoreModule} from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { ScheduleModule } from './schedule/schedule.module';
+import { AppStoreModule } from './core/store/store.module';
+import { StoreService } from './shared/services/store.service';
 
 @NgModule({
   declarations: [
@@ -20,12 +19,10 @@ import { ScheduleModule } from './schedule/schedule.module';
     FormsModule,
     CoreModule,
     GalleryModule,
-    ScheduleModule
-  //   EffectsModule.forRoot([]),
-  //  // StoreModule.forRoot(reducers, {metaReducers}),
-  //  // StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
+    ScheduleModule,
+    AppStoreModule
   ],
-  providers: [],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
