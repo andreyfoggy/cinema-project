@@ -5,10 +5,12 @@ import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { DescriptionComponent } from './description/description.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    DescriptionComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
       HeaderComponent,
-      NavComponent
+      NavComponent,
+      DescriptionComponent
   ]
 })
 export class CoreModule { }

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GalleryComponent } from './gallery.component';
+import { ScheduleComponent } from './schedule.component';
 import { DescriptionComponent } from '../core/description/description.component';
 
 
 const routes: Routes = [
   {
-    path: '', component: GalleryComponent
+    path: '', component: ScheduleComponent
   },
   {
     path: 'description/:id', component: DescriptionComponent
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GalleryRoutingModule { }
+export class ScheduleRoutingModule { }

@@ -1,0 +1,13 @@
+<div  class="item">
+  <div class = "item-image">
+    <img src={{item.poster}} alt="">
+  </div>
+  <div class="item-description">
+      <h3 [routerLink]="['description', item.id]">{{item.title}}</h3>
+      <span>genre: Fantasy</span><br>
+      time:
+      <ul *ngFor="let time of timeList; let i = index;">
+        <li>{{time}}</li>
+      </ul>
+  </div>
+</div>

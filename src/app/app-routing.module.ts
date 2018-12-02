@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'main'},
+  { path: '', pathMatch: 'full', redirectTo: 'gallery'},
   {
     path: 'gallery',
     loadChildren: './gallery/gallery.module#GalleryModule'

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Infant');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 * {
 	margin: 0;
 	padding: 0;
@@ -11,7 +12,7 @@
 	-moz-box-sizing: border-box;
 }
 body {
-	background: #e7e4e2;
+	/* background: #e7e4e2; */
 }
 .clearfix:after{
 	content: "";

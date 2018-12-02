@@ -7,7 +7,7 @@
     <app-nav></app-nav>
     <div class="registr">
       <div class="search">
-        <input [(ngModel)]="search" type="text" placeholder="Поиск"/>
+        <input *ngIf="search" (input)="onSearchChange($event)" type="text" placeholder="Поиск"/>
         <i class="fas fa-search"></i>
       </div>  
       <div>

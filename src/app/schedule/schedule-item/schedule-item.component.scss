@@ -1,0 +1,27 @@
+.item {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    background-color: #EFE7E7;
+    padding: 10px;
+}
+img {
+    height: 200px;
+}
+.item-image {
+    margin-right:15px;
+}
+ul {
+    display:inline-block;
+}
+li {
+    display: inline-block;
+    transition: 0.5s;
+    background-color: gold;
+    padding: 4px 10px;
+    margin-left: 15px;
+}
+li:hover {
+     background-color: #ffa700;
+     cursor: pointer;
+}

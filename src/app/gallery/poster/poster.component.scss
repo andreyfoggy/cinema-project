@@ -15,7 +15,7 @@ div {
 .item:hover {
     cursor: pointer;
 }
-.item:hover  a {
+.item:hover  p {
     color: #FFB100;
     text-decoration: underline;
 }
@@ -27,7 +27,7 @@ div {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    a {
+    p {
         color: #000;
     }
 }
