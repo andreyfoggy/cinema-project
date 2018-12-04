@@ -3,6 +3,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { EmbedVideo } from 'ngx-embed-video';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { GalleryModule } from './gallery/gallery.module';
@@ -21,7 +23,9 @@ import { StoreService } from './shared/services/store.service';
     FormsModule,
     GalleryModule,
     ScheduleModule,
-    AppStoreModule
+    AppStoreModule,
+    HttpClientModule,
+    EmbedVideo.forRoot()
   ],
   providers: [StoreService],
   bootstrap: [AppComponent]

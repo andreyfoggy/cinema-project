@@ -1,13 +1,13 @@
 <header>
-  <div class="header wrapper">
+  <div class="header container">
     <div class="logo">
       <img [src]="logoUrl" alt='' >
       <p>SUN CINEMA</p>
     </div> 
     <app-nav></app-nav>
     <div class="registr">
-      <div class="search">
-        <input *ngIf="search" (input)="onSearchChange($event)" type="text" placeholder="Поиск"/>
+      <div *ngIf="search" class="search">
+        <input  (input)="onSearchChange($event)" type="text" placeholder="Поиск"/>
         <i class="fas fa-search"></i>
       </div>  
       <div>
