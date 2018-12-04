@@ -2,7 +2,7 @@
     margin-top: 20px;
     display: flex;
     width: 100%;
-    background-color: #EFE7E7;
+    background-color: #fff;
     padding: 10px;
 }
 img {
@@ -24,4 +24,7 @@ li {
 li:hover {
      background-color: #ffa700;
      cursor: pointer;
+}
+h3:hover {
+    cursor: pointer;
 }
