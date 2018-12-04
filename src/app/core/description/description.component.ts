@@ -17,5 +17,4 @@ export class DescriptionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -7,7 +7,7 @@
       <span>genre: Fantasy</span><br>
       time:
       <ul *ngFor="let time of timeList; let i = index;">
-        <li>{{time}}</li>
+        <li [routerLink]="'tickets'">{{time}}</li>
       </ul>
   </div>
 </div>

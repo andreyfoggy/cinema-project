@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'description/:id', component: DescriptionComponent
   },
   {
+    path: 'tickets',
+    loadChildren: './../book-tickets/book-tickets.module#BookTicketsModule'
+  },
+  {
     path: '**', redirectTo: ''
   }
 ];
