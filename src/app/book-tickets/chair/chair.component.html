@@ -4,7 +4,7 @@
 <img [src]='picURL' tabindex="0" (click)="reserveSeat()" *ngIf="!isReserved; else successStatus"/>
 <!-- референция # -->
 <ng-template #successStatus>
-    <p tabindex="0" (click)="reserveSeat()"> {{chair.seatNumber}} </p>
+    <p tabindex="0" (click)="reserveSeat()"> {{chair}} </p>
 </ng-template>
      
 

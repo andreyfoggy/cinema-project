@@ -16,9 +16,9 @@ export class ChairComponent {
   constructor() {
   }
 
-  reserveSeat() {
-    // debugger
-      (this.isReserved === false) ? this.isReserved = true : this.isReserved = false;
-      console.log(this.isReserved);
-  }
+  // reserveSeat() {
+  //   // debugger
+  //     (this.isReserved === false) ? this.isReserved = true : this.isReserved = false;
+  //     console.log(this.isReserved);
+  // }
 }

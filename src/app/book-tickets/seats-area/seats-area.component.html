@@ -1,5 +1,5 @@
 <app-chair class="seat" 
-    *ngFor="let seat of seatsArr; let idx = index"
-    [chair]="seat" 
+    *ngFor="let seat of arrayOf(54); let idx = index"
+    [chair]="idx" 
     [ngStyle]="{ backgroundColor: (idx + 1) % 2 === 0 ? '#a0d6f7' : '#87cefa' }">
 </app-chair>
