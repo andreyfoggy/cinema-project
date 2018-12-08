@@ -1,9 +1,9 @@
 .item {
-    margin-top: 20px;
     display: flex;
     width: 100%;
-    background-color: #fff;
+    background-color: whitesmoke;
     padding: 10px;
+    margin-top: 15px;
 }
 img {
     height: 200px;
@@ -15,16 +15,24 @@ ul {
     display:inline-block;
 }
 li {
+    cursor: pointer;
     display: inline-block;
     transition: 0.5s;
     background-color: gold;
     padding: 4px 10px;
     margin-left: 15px;
-}
-li:hover {
+    &:hover {
      background-color: #ffa700;
-     cursor: pointer;
+
+    }
 }
-h3:hover {
+
+a {
+    display: block;
+    color:black;
+    font-weight: bold;
     cursor: pointer;
+    &:hover {
+        text-decoration-line: underline;
+    }
 }

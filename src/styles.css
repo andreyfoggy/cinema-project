@@ -12,18 +12,13 @@
 	-moz-box-sizing: border-box;
 }
 body {
-	background: #e7e4e2; 
+	/* background: #e7e4e2;  */
 }
 .clearfix:after{
 	content: "";
 	display: block;
 	width: 100%;
 	clear: both;
-}
-.wrapper {
-	width: 100%;
-	max-width: 1020px;
-	margin: auto;
 }
 .container {
 	width: 100%;
@@ -45,7 +40,4 @@ h1 {
 	font-size: 30px;
 	margin-top: 20px;
 	color: #ffa700;
-}
-h2 {
-	
 }

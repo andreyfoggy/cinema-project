@@ -1,0 +1,10 @@
+<!-- {{ isReserved }} => {{ chearNumber }} => {{ picURL }} -->
+
+
+<img [src]='picURL' tabindex="0" (click)="reserveSeat()" *ngIf="!isReserved; else successStatus"/>
+<!-- референция # -->
+<ng-template #successStatus>
+    <p tabindex="0" (click)="reserveSeat()"> {{chearNumber}} </p>
+</ng-template>
+     
+

@@ -1,9 +1,9 @@
 <div  class="item">
   <div class = "item-image">
-    <img src={{item.poster}} alt="">
+    <figure><img src={{item.poster}} alt=""></figure>
   </div>
   <div class="item-description">
-      <h3 [routerLink]="['description', item.id]">{{item.title}}</h3>
+      <a [routerLink]="['description', item.id]">{{item.title}}</a>
       <span>genre: Fantasy</span><br>
       time:
       <ul *ngFor="let time of timeList; let i = index;">

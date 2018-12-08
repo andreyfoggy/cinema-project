@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-book-tickets',
   templateUrl: './book-tickets.component.html',
   styleUrls: ['./book-tickets.component.scss']
 })
-export class BookTicketsComponent implements OnInit {
+export class BookTicketsComponent {
+  title = 'seatsArea';
 
-  constructor() { }
+  canBuyTikett: boolean;
+  ordered: any = false;
 
-  ngOnInit() {
+  constructor () {
+    setTimeout( () => {
+      this.canBuyTikett = true;
+    }, 4000);
   }
 
+  makeOrder() {
+    console.log(this);
+  }
 }

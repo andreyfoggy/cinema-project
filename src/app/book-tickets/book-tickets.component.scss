@@ -1,0 +1,110 @@
+ /* унаследовать box-sizing от родителя
+в случае подключения сторонних библиотек 
+inherit box-sizing from parent
+(if U use some third-party libraries) */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* box-sizing для родителя 
+box-sizing for parent */
+html {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* базовые стили для body 
+basic styles for body */
+body {
+    font-family: 'Roboto', 'Tahoma', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Во избежание выпадания изображения 
+из родительского контейнера
+parameters to avoid creeping out
+images outside the parent container */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* базовые стили для кнопок 
+basic styles for buttons */
+.btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #3cb4e7;
+  color: #ffffff; 
+  box-shadow: 2px 2px 1px 0px #000000;
+  border: 1px solid #000000;
+  transition-duration: .5s;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* базовые стили для поведения кнопок 
+basic styles for buttons hover effects */
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-color: #427a9d;
+    color: #ffffff;
+    text-shadow: 0 0 5px #000000;
+      
+}
+
+/* базовые стили для кнопок disabled
+basic styles for disabled buttons */
+button:disabled {
+    cursor: no-drop;
+    background-color: #87cefa;
+    opacity: 0.5; 
+}
+
+/* базовые стили для компонента-кинотеатра
+basic styles for seats-Area Component */
+.seats-area {
+    width: 330px;
+    margin: 0 auto;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    background-color: lightgoldenrodyellow;
+    color: #000000;
+}
+
+/* с помощью псевдоэлемента ::before, создаём экран кинозала
+using the pseudo-element ::before, create a cinema screen */
+.seats-area::before {
+    content: "";
+    height: 0;
+    width: 100%;
+    border: 3px solid  #427a9d;
+    border-radius: 35px;
+    position: absolute;
+    top: -100px;
+}
+
+/* с помощью псевдоэлемента ::after - надпись 'экран'
+with the pseudo-element ::after - the inscription 'screen' */
+.seats-area::after {
+    content: "ЭКРАН";
+    font: inherit;
+    color:  #427a9d;
+    font-size: 90%;
+    position: absolute;
+    top: -75px;
+}

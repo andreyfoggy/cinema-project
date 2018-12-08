@@ -1,0 +1,22 @@
+img {
+    width: 15px;
+    height: 15px;
+}
+
+img:hover,
+img:focus,
+img:active {
+    cursor: pointer;
+    background: url('../../../assets/images/user-solid.svg');  
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+p:hover,
+p:focus,
+p:active {
+    cursor: pointer;
+}
