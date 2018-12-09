@@ -2,9 +2,17 @@
   <app-header [search]="true"
   (searchValueBeta) = "filterFilms($event)"
   ></app-header>
-  <div class="wrapper">
-      <h1>Расписание сеансов</h1>
-    <ul *ngFor="let film of filmList; let i = index;">
+  <div class="schedule-wrapper">
+      <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
+      <div class="line"></div>
+      <ul class="filter">
+        <li><a>Today</a></li>
+        <li><a>Tomorrow</a></li>
+        <li><a> 11 December</a></li>
+        <li><a>12 December</a></li>
+        <li><a>13 December</a></li>
+      </ul>
+    <ul class="schedule-list" *ngFor="let film of filmList; let i = index;">
       <app-schedule-item [item]="film"></app-schedule-item>
     </ul>
   </div>

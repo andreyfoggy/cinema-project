@@ -1,6 +1,37 @@
-.wrapper {
+.schedule-wrapper {
     font-family: 'Playfair Display', serif;
     margin:auto;
     margin-top:10px;
     width:90%;
 }
+.schedule-list{
+    margin-top:20px;
+}
+h1{
+    font-family: 'Merriweather', serif;
+    color:rgb(37, 36, 36);
+}
+.line{
+    margin-top:20px;
+    width:100%;
+    border-top: 2px solid lightgrey;
+}
+.filter {
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    li{
+        display: inline-block;
+        a{
+            color:rgb(83, 83, 83);
+            font-size: 20px;
+            padding: 3px 10px;
+            &:hover {
+                cursor: pointer;
+                color:black;
+                border-bottom: 3px solid grey;
+            }
+        }
+    }
+}
+
