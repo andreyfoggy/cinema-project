@@ -11,6 +11,7 @@ import { GalleryModule } from './gallery/gallery.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AppStoreModule } from './core/store/store.module';
 import { StoreService } from './shared/services/store.service';
+import { HttpService } from './shared/services/http.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { StoreService } from './shared/services/store.service';
     HttpClientModule,
     EmbedVideo.forRoot()
   ],
-  providers: [StoreService],
+  providers: [StoreService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

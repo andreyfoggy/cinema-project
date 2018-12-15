@@ -18,6 +18,6 @@ export class BookTicketsComponent {
   }
 
   makeOrder() {
-    console.log(this);
+  //  console.log(this);
   }
 }
