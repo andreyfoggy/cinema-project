@@ -12,7 +12,8 @@ export class HttpService {
     public getFilms(): Observable<any> {
         return this.http.get('http://glamdim-001-site1.ftempurl.com/api/Movie');
     }
-    public getFilmById() {
-
+    public getFilmById(id: number) {
+        const url = 'http://glamdim-001-site1.ftempurl.com/api/Movie/' + id;
+        return this.http.get(url);
     }
 }
