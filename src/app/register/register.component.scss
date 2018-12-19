@@ -1,0 +1,55 @@
+form{
+  margin:0px auto;
+  text-align: right;
+  width: 600px;
+  height: 870px;
+  background: url(../../assets/images/bgd_registration_form.png) no-repeat;
+  padding-right: 70px;
+  padding-top: 335px;
+
+}
+.form-group>label{
+  font-family: Arial;
+  font-size: 23px;
+  color: grey;
+  text-align: right;
+  margin-right: 10px;
+}
+.form-control{
+  background: #6699994f;
+  border-color:#56676b;
+  color: #ad3535;
+  height: 35px;
+  padding: 6px 12px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.form-group>div>div{
+  color:#881212;
+  font-size: 18px;
+  height: 33px;
+  padding: 5px;
+}
+.btn_form_submit{
+  cursor: pointer;
+  border: 0px;
+  border-radius: 20px;
+  width: 160px;
+  height: 40px;
+  position: relative;
+  margin-top: 36px;
+  background-color: #629e33;
+  font-family: Arial;
+  font-size: 23px;
+  color:white;
+}
+.btn_form_submit:hover{
+  background-color:#e63d47;
+}
+.btn_form_submit>img{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  right: -16px;
+  top: -36px;
+}
