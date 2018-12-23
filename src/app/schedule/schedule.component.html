@@ -6,11 +6,8 @@
       <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
       <div class="line"></div>
       <ul class="filter">
-        <li><a>Today</a></li>
-        <li><a>Tomorrow</a></li>
-        <li><a> 11 December</a></li>
-        <li><a>12 December</a></li>
-        <li><a>13 December</a></li>
+        <i class="fas fa-calendar-alt"></i>
+        <li *ngFor="let day of days"><a>{{day}}</a></li>
       </ul>
     <ul class="schedule-list" *ngFor="let film of filmList; let i = index;">
       <app-schedule-item [item]="film"></app-schedule-item>

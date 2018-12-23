@@ -123,10 +123,22 @@ export class ScheduleComponent implements OnInit {
       genre: ''
     }
   ];
+  
+  public days = [];
 
   constructor(private http: HttpService) {
     this.fullList = JSON.parse(JSON.stringify(this.filmList));
-   }
+    for (let d = 0; d < 5; d++) {
+		  this.days.push(this.getDay(d))
+    }
+    console.log(this.days)
+  }
+  public getDay(day) {
+    let weekDay = [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ];
+    const newDay = new Date();
+    newDay.setDate(newDay.getDate() + day);
+    return (newDay.getDate() ==  new Date().getDate() ) ? "Сегодня" :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
+}
 
   ngOnInit() {
     this.http.getFilms()
@@ -135,13 +147,13 @@ export class ScheduleComponent implements OnInit {
             this.filmList[index].title = item.Name;
             this.filmList[index].genre = item.Genre.Name;
         });
-        console.log(this.filmList);
       });
       this.http.getFilmById(2)
         .subscribe(film => {
           console.log(film);
         });
   }
+  
 
   public filterFilms(value) {
     const searchQuery = value.toLowerCase();

@@ -4,13 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import { CoreModule } from '../core/core.module';
-
+import { RecaptchaModule } from 'ng-recaptcha';
 @NgModule({
   imports: [
     CommonModule,
     RegisterRoutingModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    RecaptchaModule.forRoot()
   ],
   declarations: [RegisterComponent]
 })

@@ -1,4 +1,41 @@
-<app-header></app-header>
-<p>
-  register works!
-</p>
+<div class="registerContent">
+  <app-header></app-header>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="formContainerGrey"></div>
+      <img class="formContainerImg" src="../../assets/images/bgd_registration_form.png" alt="">
+      <div class="form-group">
+        <label >Логин:</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div>
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label >Пароль:</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div>
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label >Повторите пароль:</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div>
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label >Mail:</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div>
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+     <div class="form-group">
+        <button type='submit' class="btn_form_submit"><img src="../../assets/images/button_registration_submit.png" alt="">Регистрация</button>
+      </div>
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+      <re-captcha (resolved)="resolved($event)"  siteKey="6LeaRIQUAAAAAAz5NtbmKzosHKLR6ON16rpceNy-"></re-captcha>
+    </form>
+</div>

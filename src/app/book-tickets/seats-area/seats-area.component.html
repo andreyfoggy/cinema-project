@@ -1,5 +1,14 @@
-<app-chair class="seat" 
-    *ngFor="let seat of arrayOf(54); let idx = index"
-    [chair]="idx" 
-    [ngStyle]="{ backgroundColor: (idx + 1) % 2 === 0 ? '#a0d6f7' : '#87cefa' }">
-</app-chair>
+<div class="screen">Экран</div>
+<div class="seats-area">
+    <ul class="row">
+        <li *ngFor="let row of rows"> Ряд {{row}}</li>
+    </ul>
+    <div class="seats">
+        <app-chair class="seat" 
+            *ngFor="let seat of chairs; let idx = index"
+            (chooseChair)="getChair($event)"
+            [chair]="seat" 
+            >
+        </app-chair>
+    </div>
+</div>
