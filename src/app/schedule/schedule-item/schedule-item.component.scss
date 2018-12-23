@@ -9,7 +9,13 @@ img {
     height: 200px;
 }
 .item-image {
-    margin-right:15px;
+    margin-right:25px;
+}
+.item-title {
+    margin-bottom: 5px;
+}
+.item-time {
+    margin-top: 10px;
 }
 ul {
     display:inline-block;
@@ -18,11 +24,12 @@ li {
     cursor: pointer;
     display: inline-block;
     transition: 0.5s;
-    background-color: gold;
+    background-color: #ffba00;
     padding: 4px 10px;
     margin-left: 15px;
+    outline: 0;
     &:hover {
-     background-color: #ffa700;
+     background-color: #ff8800;
 
     }
 }

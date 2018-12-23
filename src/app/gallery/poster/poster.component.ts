@@ -9,8 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PosterComponent implements OnInit {
   @Input() item = <any>{};
 
-  constructor() { }
+  constructor() {
+  
+   }
   ngOnInit() {
+    
   }
 
 }

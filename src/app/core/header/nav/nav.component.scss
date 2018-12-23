@@ -1,5 +1,4 @@
 .menu ul {
-    width: 300px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -10,5 +9,8 @@
     }
     a:hover {
         color: #FFB100;
+    }
+    li {
+        margin: 0 10px 0 10px;
     }
 }

@@ -1,6 +1,29 @@
-<app-header [search]="true"
-(searchValueBeta) = "filterFilms($event)"
-></app-header>
-<app-seats-area class="seats-area"></app-seats-area>
-<button [disabled] = "!canBuyTikett" class='btn reserv-btn'(click)='makeOrder()'>Заказать</button>
+<app-header [search]="true"></app-header>
+<section class="book-tickets">
+    <div class="film-description">
+        <div>
 
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <app-seats-area class="seats-area"
+        (chooseChair)="getChair($event)"
+    >
+    </app-seats-area>
+    <div class="box-info" >
+        <div class="ticket-buy" *ngIf="canBuyTicket">
+            <div class="ticket-info" *ngFor="let chooseTicket of chooseTickets">
+                <div> <span>Ваш ряд: {{chooseTicket.row}}</span> </div>
+                <div> <span>Ваше место: {{chooseTicket.seat}}</span> </div>
+                <div><span>Стоимость: {{costTicket}} грн.</span></div>
+                {{chooseTicket.index}}
+            </div>
+            <div>
+                <span>Всего {{costTicket * chooseTickets.length}} грн. </span>
+            </div>
+            <button class='btn reserv-btn'>Купить</button>
+        </div>
+    </div>
+</section>

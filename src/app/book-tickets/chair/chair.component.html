@@ -1,10 +1,9 @@
-<!-- {{ isReserved }} => {{ chearNumber }} => {{ picURL }} -->
-
-
-<img [src]='picURL' tabindex="0" (click)="reserveSeat()" *ngIf="!isReserved; else successStatus"/>
-<!-- референция # -->
-<ng-template #successStatus>
-    <p tabindex="0" (click)="reserveSeat()"> {{chair}} </p>
-</ng-template>
-     
+<div class="chair" (click)="reserveSeat()" [ngClass]="{cursor: this.chair.disabled}">
+    <div class="chair-img" *ngIf="chair.reserve">
+        <i class="fas fa-user"></i>
+    </div>
+    <div class="chair-num" *ngIf="!chair.reserve">
+        {{chair.seat}}
+    </div>
+</div>  
 

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Chair } from '../../shared/models/cinema.models';
 
 @Component({
   selector: 'app-seats-area',
@@ -6,15 +7,54 @@ import { Component } from '@angular/core';
   styleUrls: ['./seats-area.component.scss']
 })
 export class SeatsAreaComponent {
+  @Output() chooseChair = new EventEmitter<object>();
 
-  seatsArr: Array<number>  = [7, 10, 25, 26, 27, 35]; // такие данные будут приходить - нужно передать
-  hallDimension: Array<number> = [6, 9]; // размеры зала, можно использовать как параметр arrayOf
+  public chair: Chair
+  public chairs = []
+  public rows = []
+  public storeReserve = [12,14,46]
+
   constructor() {
-    // console.log(this);
+    this.createChair()
+    console.log(this.chairs)
   }
 
-  public arrayOf(n: number): any[] { // для ngFor - задает количество мест
+  public createChair () {
+    let arrChair = 0;
+    for (let i = 1; i < 8; i++ ){
+      this.rows.push(i)
+      for (let x = 1; x < 9; x++ ){
+        arrChair++;
+        this.chair = {
+          index: arrChair,
+          row: this.rows[i-1], 
+          seat: x,
+          reserve: false
+        }
+        this.chair = this.checkIfDisabled(this.chair, this.storeReserve)
+        this.chairs.push(this.chair)
+      }
+    }
+  }
+  
+  public checkIfDisabled (chair, storeReserve) {
+    const item = storeReserve.find( elem => {
+      console.log('chair ' + chair.index)
+      return elem === chair.index
+    })
+    
+    if(item) {
+      return {...chair, reserve: true, disabled: true}
+    } else {
+      return chair;
+      }
+  }
+
+  public getChair(event){
+    this.chooseChair.emit(event);
+  }
+
+  public arrayOf(n: number): any[] { 
     return Array(n);
   }
-
 }

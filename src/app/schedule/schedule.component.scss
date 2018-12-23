@@ -1,5 +1,6 @@
 .schedule-wrapper {
-    font-family: 'Playfair Display', serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
     margin:auto;
     margin-top:10px;
     width:90%;
@@ -17,12 +18,20 @@ h1{
     border-top: 2px solid lightgrey;
 }
 .filter {
-    width:100%;
+    max-width: 520px;
+    width: 100%;
+    margin: 20px auto;
     display:flex;
     justify-content: space-around;
-    li{
+    align-items: center;
+    .fas {
+        font-size: 28px;
+        color: grey;
+    }
+    li {
         display: inline-block;
-        a{
+        padding: 3px 10px;
+        a {
             color:rgb(83, 83, 83);
             font-size: 20px;
             padding: 3px 10px;
@@ -34,4 +43,5 @@ h1{
         }
     }
 }
+
 
