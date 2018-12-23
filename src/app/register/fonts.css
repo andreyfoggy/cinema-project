@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Appetite';
+  src: url('../../assets/fonts/AppetiteContrast/AppetiteContrast.eot');
+  src: local('../../assets/fonts/AppetiteContrast/Appetite Contrast'), local('AppetiteContrast'),
+  url('../../assets/fonts/AppetiteContrast/AppetiteContrast.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/fonts/AppetiteContrast/AppetiteContrast.woff') format('woff'),
+  url('../../assets/fonts/AppetiteContrast/AppetiteContrast.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('../../assets/fonts/Caveat/Caveat-Bold.eot');
+  src: local('../../assets/fonts/Caveat/Caveat Bold'), local('Caveat-Bold'),
+  url('../../assets/fonts/Caveat/Caveat-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../../assets/fonts/Caveat/Caveat-Bold.woff') format('woff'),
+  url('../../assets/fonts/Caveat/Caveat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+

@@ -1,3 +1,4 @@
+@import url(./fonts.css);
 .registerContent{
   background-image: url(../../assets/images/body_bgn.png);
   background-size: cover;
@@ -32,16 +33,16 @@ form{
   position: relative;
 }
 .form-group>label{
-  font-family: Arial;
+  font-family: Appetite;
   font-size: 23px;
-  color: black;
+  color: #33823e;
   text-align: right;
   margin-right: 10px;
 }
 .form-control{
   background: #6699994f;
   border-color:#56676b;
-  color: #ad3535;
+  color: #1713bd;
   height: 35px;
   padding: 6px 12px;
   font-size: 20px;
@@ -62,7 +63,7 @@ form{
   position: relative;
   margin-top: 36px;
   background-color: #629e33;
-  font-family: Arial;
+  font-family: Caveat;
   font-size: 23px;
   color:white;
 }

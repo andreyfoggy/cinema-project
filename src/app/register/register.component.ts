@@ -66,12 +66,12 @@ export class RegisterComponent implements OnInit {
 
 
   public loadScript() {
-    console.log('preparing to load...')
-    const node = document.createElement('script');
-    node.src = './src/app/register/snow.js';
-    node.type = 'text/javascript';
-    node.async = true;
-    node.charset = 'utf-8';
-    document.getElementsByTagName('body')[0].appendChild(node);
+    // console.log('preparing to load...')
+    // const node = document.createElement('script');
+    // node.src = './src/app/register/snow.js';
+    // node.type = 'text/javascript';
+    // node.async = true;
+    // node.charset = 'utf-8';
+    // document.getElementsByTagName('body')[0].appendChild(node);
   }
 }
