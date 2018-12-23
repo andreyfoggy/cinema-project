@@ -6,7 +6,7 @@ export interface State {
   }
 
 export const reducers: ActionReducerMap <State> = {
-    todo: fromFilms.reducer
+    todo: fromFilms.sessionStore
   };
 
-  export const getFilms = (state: State) => state.todo.films;
+export const getFilms = (state: State) => state.todo.films;

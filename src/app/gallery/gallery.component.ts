@@ -105,8 +105,8 @@ export class GalleryComponent implements OnInit {
     }
   ];
 
-  constructor(private store: StoreService) {
-    let test = store.asynchGetFilms();
+  constructor() {
+
     this.fullList = JSON.parse(JSON.stringify(this.filmList));
   }
   ngOnInit() {
