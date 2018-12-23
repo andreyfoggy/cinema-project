@@ -23,7 +23,9 @@ export class RegisterComponent implements OnInit {
   ) {
 
   }
-
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -41,6 +43,7 @@ export class RegisterComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   public onSubmit() {
+    console.log("asd");
     // this.submitted = true;
     //
     // // stop here if form is invalid

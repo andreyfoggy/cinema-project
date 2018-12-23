@@ -1,17 +1,40 @@
+.registerContent{
+  background-image: url(../../assets/images/body_bgn.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 form{
   margin:0px auto;
   text-align: right;
   width: 600px;
   height: 870px;
-  background: url(../../assets/images/bgd_registration_form.png) no-repeat;
   padding-right: 70px;
   padding-top: 335px;
-
+  position: relative;
+}
+.formContainerImg{
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.formContainerGrey{
+  z-index: 1;
+  width: 600px;
+  height: 645px;
+  background-color: #e6e4e4c9;
+  position: absolute;
+  margin-top: -122px;
+ }
+.form-group{
+  z-index: 2;
+  position: relative;
 }
 .form-group>label{
   font-family: Arial;
   font-size: 23px;
-  color: grey;
+  color: black;
   text-align: right;
   margin-right: 10px;
 }
@@ -52,4 +75,12 @@ form{
   width: 50px;
   right: -16px;
   top: -36px;
+}
+re-captcha{
+  width: 308px;
+  height: 80px;
+  position: absolute;
+  left: 50px;
+  z-index: 2;
+  top: 660px;
 }

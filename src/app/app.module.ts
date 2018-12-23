@@ -11,7 +11,6 @@ import { GalleryModule } from './gallery/gallery.module';
 import { ScheduleModule } from './schedule/schedule.module';
 import { AppStoreModule } from './core/store/store.module';
 import { StoreService } from './shared/services/store.service';
-
 @NgModule({
   declarations: [
     AppComponent
