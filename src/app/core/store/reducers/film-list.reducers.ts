@@ -6,7 +6,7 @@ export  interface IFilmsState {
 export const initialState: IFilmsState = {
     films: [  {
       time: 1,
-      date: '27.12.2018',
+      date: '28.12.2018',
       film: 'avatar',
       seats:  [1, 3, 6]
       },
@@ -27,7 +27,7 @@ export const initialState: IFilmsState = {
 
 export function sessionStore(
   state: IFilmsState = initialState,
-  action: Action
+  action
   ): IFilmsState {
     switch (action.type) {
       case PUSH: {

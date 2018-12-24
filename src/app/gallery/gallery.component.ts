@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MockService } from '../shared/services/mock.service';
 
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -10,6 +11,7 @@ export class GalleryComponent implements OnInit {
   // private fullList = [];
   public filmList = [];
   public film: any;
+  public sessionList$;
 
   constructor(private mock: MockService) {
     // this.fullList = JSON.parse(JSON.stringify(this.filmList));

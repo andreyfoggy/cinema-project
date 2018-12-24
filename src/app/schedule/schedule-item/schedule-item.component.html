@@ -7,7 +7,14 @@
       <span>Жанр: {{item.genre}}</span><br>
       <span>Время:</span>
       <ul  class="item-time" *ngFor="let time of item.sessions; let i = index;">
-        <li [routerLink]="'tickets'">{{time}}</li>
+        <li [routerLink]="'tickets'"
+            [queryParams]="{ 
+              time: i,
+              date: '28.12.2018',
+              film: 'avatar'
+            }">
+            {{time}}
+        </li>
       </ul>
   </div>
 </div>

@@ -1,23 +1,31 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Chair } from '../../shared/models/cinema.models';
 import { StoreService } from 'src/app/shared/services/store.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-seats-area',
   templateUrl: './seats-area.component.html',
   styleUrls: ['./seats-area.component.scss']
 })
-export class SeatsAreaComponent {
+export class SeatsAreaComponent implements OnInit {
   @Output() chooseChair = new EventEmitter<object>();
-
+  @Output() dataToSend = new EventEmitter<object>();
   public chair: Chair;
   public chairs = [];
   public rows = [];
   public storeReserve = [12, 14, 46];
 
-  constructor() {
-    this.createChair();
-    console.log(this.chairs);
+  constructor(private storeService: StoreService, private route: ActivatedRoute) {
+  }
+
+  ngOnInit() {
+      this.route.queryParams
+        .subscribe(params => {
+          const filmParams = params;
+          this.getSessions(filmParams);
+      });
   }
   public createChair () {
     let arrChair = 0;
@@ -39,7 +47,6 @@ export class SeatsAreaComponent {
 
   public checkIfDisabled (chair, storeReserve) {
     const item = storeReserve.find( elem => {
-      console.log('chair ' + chair.index);
       return elem === chair.index;
     });
 
@@ -58,7 +65,25 @@ export class SeatsAreaComponent {
     return Array(n);
   }
 
-  public getArray() {
-    // this.store.getBookedTickets();
+  private getSessions(filmParams) {
+      const subscription = this.storeService.getBookedTickets()
+        .subscribe(data => {
+          this.storeReserve = this.getTickets(data.films, filmParams).seats || [];
+          this.dataToSend.emit({chairs: this.storeReserve, params: filmParams});
+          this.createChair();
+        });
+      subscription.unsubscribe();
+  }
+
+  private getTickets(data, filmParams) {
+    return data.find(film => this.compareParams(film, filmParams)) || {};
+  }
+
+  private compareParams(session, item) {
+    if (session.time === Number(item.time) && session.date === item.date && session.film === item.film) {
+        return true;
+    } else {
+        return false;
+    }
   }
 }

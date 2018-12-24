@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   public onSubmit() {
-    console.log("asd");
     // this.submitted = true;
     //
     // // stop here if form is invalid

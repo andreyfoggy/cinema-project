@@ -6,3 +6,5 @@ export  interface IFilmsState {
 export const getFilmsState = createFeatureSelector<IFilmsState>(
   'sessions'
 );
+
+export const getFilms = (state) => state.films;
