@@ -11,8 +11,6 @@ export class StoreService implements OnInit {
     constructor(private store: Store<State>) {
         this.sessionList$ = this.store.select('films');
     }
-    public asynchGetFilms (): Observable<any> {
-        return this.store.pipe(select(getFilms));
     public pushBookedTickets(item): void {
         this.store.dispatch(new PushAction(item));
       }
