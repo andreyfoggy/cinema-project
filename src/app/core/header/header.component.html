@@ -11,8 +11,9 @@
         <i class="fas fa-search"></i>
       </div>  
       <div>
-        <a routerLink="/register"> <i class="far fa-user" ></i></a>
+        <button (click)="showWindowAuthorization()" class="far fa-user" ></button>
       </div>
     </div>
-  </div>  
+  </div>
 </header>
+<app-authorization [ngStyle]="{'display': stateWindowAuthorization}" (closeWindowAuthorization)= "closeWindow($event)" ></app-authorization>

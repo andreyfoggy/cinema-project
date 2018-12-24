@@ -22,9 +22,9 @@ import { StoreService } from './shared/services/store.service';
     FormsModule,
     GalleryModule,
     ScheduleModule,
-    AppStoreModule,
     HttpClientModule,
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    AppStoreModule
   ],
   providers: [StoreService],
   bootstrap: [AppComponent]

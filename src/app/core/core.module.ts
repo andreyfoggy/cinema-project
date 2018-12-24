@@ -7,17 +7,21 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DescriptionComponent } from './description/description.component';
 import { FooterComponent } from './footer/footer.component';
+import {AuthorizationComponent} from '../authorization/authorization.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HeaderComponent,
     NavComponent,
     DescriptionComponent,
-    FooterComponent
+    FooterComponent,
+    AuthorizationComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
       HeaderComponent,

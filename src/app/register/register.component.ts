@@ -3,7 +3,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ValidatorFormRegister} from './validatorFormRegister';
 import {standartBase} from './standartBaseUser';
-import { ReCaptchaComponent } from 'angular2-recaptcha';
+import {ReCaptchaComponent} from 'angular2-recaptcha';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private router: Router,
   ) {
   }
@@ -47,24 +48,26 @@ export class RegisterComponent implements OnInit {
       confirmPass: ['', []],
     });
     this.loginForm.setValidators(this.validatorForm.validatorConfirmPass);
-    localStorage.setItem('userBase', JSON.stringify(standartBase));
     this.captchaStatus = false;
     this.loadScript();
   }
-  resetrRecapcha(){
 
-  }
-  public onSubmit() {
+  resetrRecapcha() {
     this.recaptchControl.reset();
-    // this.showValidateFormMsg();
-    // if (this.loginForm.status === 'VALID' && this.captchaStatus === true) {
-    //   this.addUserLocalStorage();
-    //   this.clearInpputForm();
-    //   alert('Регистрация успешна');
-    // }
-    // else {
-    //   alert('Проверьте поля ввода и "я не робот"');
-    // }
+  }
+
+  public onSubmit() {
+    this.showValidateFormMsg();
+    if (this.loginForm.status === 'VALID' && this.captchaStatus === true) {
+
+      this.clearInpputForm();
+      this.resetrRecapcha();
+      alert('Регистрация успешна');
+    this.router.navigateByUrl("/gallery");this.addUserLocalStorage();
+    }
+    else {
+      alert('Проверьте поля ввода и "я не робот"');
+    }
   }
 
   addUserLocalStorage() {
