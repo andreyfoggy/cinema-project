@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ScheduleItemComponent implements OnInit {
   @Input() item = <any>{};
-  
+
   constructor() { }
 
   ngOnInit() {

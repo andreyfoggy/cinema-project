@@ -24,6 +24,7 @@ export class ScheduleComponent implements OnInit {
     const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
     const newDay = new Date();
     newDay.setDate(newDay.getDate() + day);
+    console.log(newDay.setDate(newDay.getDate() + day))
     return (newDay.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
   }
 
