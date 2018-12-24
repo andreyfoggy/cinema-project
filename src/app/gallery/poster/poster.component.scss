@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 174px;
+        width: 175px;
         position: absolute;
         top: 0;
         color: #fff;
@@ -32,6 +32,7 @@
     }
 
     .film-title {
+        background-color: whitesmoke;
         height: 40px;
         font-size: 14px;
         overflow: hidden;

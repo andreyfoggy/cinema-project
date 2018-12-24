@@ -6,9 +6,12 @@
 
     .item-box {
         width: 100%;
-        max-width: 174px;
+        max-width: 175px;
         margin: 0 10px 25px 10px;
         text-align: center;
-        // position: relative;
+
+        .poster {
+            outline: 0;
+        }
     }
 }

@@ -4,8 +4,8 @@
   </div>
   <div class="item-description">
       <a class="item-title" [routerLink]="['description', item.id]">{{item.name}}</a>
-      <span>Genre: {{item.genre}}</span><br>
-      <span>Time:</span>
+      <span>Жанр: {{item.genre}}</span><br>
+      <span>Время:</span>
       <ul  class="item-time" *ngFor="let time of item.sessions; let i = index;">
         <li [routerLink]="'tickets'">{{time}}</li>
       </ul>

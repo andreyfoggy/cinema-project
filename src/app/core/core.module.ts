@@ -1,6 +1,6 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ScrollToModule.forRoot()
   ],
   exports: [
       HeaderComponent,

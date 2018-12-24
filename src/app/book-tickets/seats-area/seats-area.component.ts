@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Chair } from '../../shared/models/cinema.models';
+import { StoreService } from 'src/app/shared/services/store.service';
 
 @Component({
   selector: 'app-seats-area',
@@ -18,7 +19,6 @@ export class SeatsAreaComponent {
     this.createChair();
     console.log(this.chairs);
   }
-
   public createChair () {
     let arrChair = 0;
     for (let i = 1; i < 8; i++ ) {
@@ -56,5 +56,9 @@ export class SeatsAreaComponent {
 
   public arrayOf(n: number): any[] {
     return Array(n);
+  }
+
+  public getArray() {
+    // this.store.getBookedTickets();
   }
 }

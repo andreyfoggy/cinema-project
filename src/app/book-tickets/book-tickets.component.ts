@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreService } from '../shared/services/store.service';
 
 @Component({
   selector: 'app-book-tickets',

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from '../shared/services/store.service';
-import { FilmList } from '../shared/storage/film-list';
+import { MockService } from '../shared/services/mock.service';
 
 @Component({
   selector: 'app-gallery',
@@ -8,23 +7,16 @@ import { FilmList } from '../shared/storage/film-list';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  private fullList = [];
-  public filmList = FilmList;
+  // private fullList = [];
+  public filmList = [];
   public film: any;
 
-  constructor(private store: StoreService) {
-    // let test = store.asynchGetFilms();
-    this.fullList = JSON.parse(JSON.stringify(this.filmList));
-    console.log (this);
-  }
-
-  public getFilm(event) {
-    this.film = event;
-    console.log (this.film);
+  constructor(private mock: MockService) {
+    // this.fullList = JSON.parse(JSON.stringify(this.filmList));
   }
 
   ngOnInit() {
-
+    this.filmList = this.mock.getFilms();
   }
 
   // filterFilms(value) {

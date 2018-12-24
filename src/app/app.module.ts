@@ -12,6 +12,7 @@ import { ScheduleModule } from './schedule/schedule.module';
 import { AppStoreModule } from './core/store/store.module';
 import { StoreService } from './shared/services/store.service';
 import { HttpService } from './shared/services/http.service';
+import { MockService } from './shared/services/mock.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { HttpService } from './shared/services/http.service';
     HttpClientModule,
     EmbedVideo.forRoot()
   ],
-  providers: [StoreService, HttpService],
+  providers: [StoreService, HttpService, MockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,32 +1,34 @@
 <app-header></app-header>
 <section class="descr">
-  <div class="descr-container" > 
+  <div class="descr-container" [ngStyle]="{'background-image': 'url(' + film.backImg + ')'}"> 
     <div class="film-name">
-      <h2></h2>
+      <h2>{{film.name}}</h2>
     </div>
     <div class="block trailer" (click)="showTrailer()">ТРЕЙЛЕР</div>
-    <div class="block tickets">БИЛЕТЫ</div>
+    <div class="block tickets" (click)="scrollTo(ticket)">БИЛЕТЫ</div>
     <div class="descr-box">
       <div class="descr-box-up">
         <div class="poster">
-            <img src="" alt=''>  
+            <img src={{film.poster}} alt=''>  
         </div>
         <div class="genre">
-          <h3></h3>
-          <p><b>Страна, год: </b></p>
-          <p><b>Жанр: </b></p>
-          <p><b>Режиссёр: </b></p>
-          <p><b>В ролях: </b></p>
-          <p><b>Продолжительность: </b></p>
+          <h3>{{film.name}}</h3>
+          <p><b>Страна, год: </b>{{film.year}} </p>
+          <p><b>Жанр: </b> {{film.genre}}</p>
+          <p><b>Режиссёр: </b> {{film.director}}</p>
+          <p><b>В ролях: </b> {{film.cast}}</p>
+          <p><b>Продолжительность: </b> {{film.duration}}</p>
         </div>
       </div>
       <div class="descr-box-down">
         <h4>Описание</h4>
-          
+        <div>{{film.about}}</div>
       </div>
     </div>
   </div>
-  <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html">
-    {{iframe_html}}
-  </div>
+  <div #trailer>
+    <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
+      {{iframe_html}}
+    </div>
+</div>
 </section>

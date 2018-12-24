@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { EmbedVideoService } from 'ngx-embed-video';
+import { MockService } from 'src/app/shared/services/mock.service';
 
 @Component({
   selector: 'app-description',
@@ -13,24 +13,31 @@ import { EmbedVideoService } from 'ngx-embed-video';
 export class DescriptionComponent implements OnInit {
   public iframe_html: string;
   public toggleTrailer: boolean;
-  public filmList = {};
-  public sub: any;
   public film: any;
-    // [ngStyle]="{'background-image': 'url(' + filmList.image.split('@')[1] + ')'}"
-  public id: number;
-  private subscription: Subscription;
-  constructor(private route: ActivatedRoute, private embedService: EmbedVideoService, private router: Router) {
-    this.subscription = route.params.subscribe(params => this.id = params['id']);
-    // this.iframe_html = this.embedService
-    //   .embed(this.filmList.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
-    console.log(this);
+  private fragment: string;
+
+  constructor(private route: ActivatedRoute, private embedService: EmbedVideoService,
+     private router: Router, private mock: MockService) {
+
+
   }
   public showTrailer () {
     this.toggleTrailer = !this.toggleTrailer;
   }
 
-  ngOnInit() {
-
+  async scrollTo ($element) {
+      await this.showTrailer ();
+      $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
+
+  ngOnInit() {
+    this.route.params
+      .subscribe(params => {
+        this.film = this.mock.getFilmById(Number(params['id']));
+    });
+    this.iframe_html = this.embedService
+      .embed(this.film.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
+  }
+
 }
 

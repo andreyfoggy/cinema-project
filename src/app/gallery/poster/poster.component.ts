@@ -8,14 +8,9 @@ import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 export class PosterComponent implements OnInit {
   @Input() film = <any>{};
-  @Output() chooseFilm = new EventEmitter<object>();
 
   constructor() {
 
-  }
-
-  public getFilm () {
-    this.chooseFilm.emit(this.film);
   }
 
   ngOnInit() {
