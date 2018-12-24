@@ -15,6 +15,7 @@ export class DescriptionComponent implements OnInit {
   public toggleTrailer: boolean;
   public film: any;
   public days = [];
+  public date: String;
 
   constructor(private route: ActivatedRoute, private embedService: EmbedVideoService,
       private router: Router, private mock: MockService) {
@@ -52,10 +53,11 @@ export class DescriptionComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .subscribe(params => {
-        this.film = this.mock.getFilmById(Number(params['id']));
-        console.log(this.film);
-    });
+      .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));
+
+    this.route.queryParams
+      .subscribe(dateParams => this.date = dateParams.date);
+
     this.iframe_html = this.embedService
       .embed(this.film.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
   }
