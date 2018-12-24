@@ -1,4 +1,4 @@
-export const FilmList  = [
+export const filmList  = [
     {
       poster: 'https://cinema.moscow/system/uploads/cover/image/7697/843479.jpg',
       name: 'Фантастические звери: Преступления Гриндельвальда',

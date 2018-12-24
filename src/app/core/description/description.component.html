@@ -9,15 +9,15 @@
     <div class="descr-box">
       <div class="descr-box-up">
         <div class="poster">
-            <img src="" alt=''>  
+            <img src={{film.poster}} alt=''>  
         </div>
         <div class="genre">
           <h3></h3>
-          <p><b>Страна, год: </b></p>
-          <p><b>Жанр: </b></p>
-          <p><b>Режиссёр: </b></p>
-          <p><b>В ролях: </b></p>
-          <p><b>Продолжительность: </b></p>
+          <p><b>Страна, год: {{film.year}} </b></p>
+          <p><b>Жанр: {{film.genre}} </b></p>
+          <p><b>Режиссёр: {{film.director}}</b></p>
+          <p><b>В ролях: {{film.cast}} </b></p>
+          <p><b>Продолжительность: {{film.duration}}</b></p>
         </div>
       </div>
       <div class="descr-box-down">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/services/http.service';
-import { FilmList } from '../shared/storage/film-list';
+import { filmList } from '../shared/storage/film-list';
 
 @Component({
   selector: 'app-schedule',
@@ -10,7 +10,7 @@ import { FilmList } from '../shared/storage/film-list';
 export class ScheduleComponent implements OnInit {
 
   private fullList = [];
-  public filmList = FilmList;
+  public filmList = filmList;
 
   public days = [];
 
