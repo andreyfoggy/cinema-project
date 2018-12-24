@@ -30,8 +30,11 @@ export class DescriptionComponent implements OnInit {
     return (newDay.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
   }
 
-  public showTrailer () {
+  public showTrailer ($element) {
     this.toggleTrailer = !this.toggleTrailer;
+    if (this.toggleTrailer === true) {
+      $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    }
   }
 
   public scrollTo ($element) {
