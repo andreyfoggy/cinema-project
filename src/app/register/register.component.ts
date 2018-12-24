@@ -1,70 +1,81 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-
+import {ValidatorFormRegister} from './validatorFormRegister';
+import {standartBase} from './standartBaseUser';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  validatorForm = new ValidatorFormRegister();
   loginForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
-  error = '';
+  public formErrorMsg = {
+    login: '',
+    phone: '',
+    pass: '',
+    confermPass: '',
+    mail: ''
+  };
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    // private authenticationService: AuthenticationService
   ) {
+  }
 
-  }
-  resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
-  }
+
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      login: ['', [this.validatorForm.validatorLogin]],
+      phone: ['', [this.validatorForm.validatorPhone]],
+      pass: ['', [this.validatorForm.validatorPass]],
+      mail: ['', [this.validatorForm.validatorMail]],
+      confirmPass: ['', []],
     });
+    this.loginForm.setValidators(this.validatorForm.validatorConfirmPass);
+    localStorage.setItem("userBase",JSON.stringify(standartBase));
     this.loadScript();
-    // reset login status
-    // this.authenticationService.logout();
-
-    // get return url from route parameters or default to '/'
-    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
-
-  // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
 
   public onSubmit() {
-    console.log("asd");
-    // this.submitted = true;
-    //
-    // // stop here if form is invalid
-    // if (this.loginForm.invalid) {
-    //   return;
-    // }
-    // this.loading = true;
-  //   this.authenticationService.login(this.f.username.value, this.f.password.value)
-  //     .pipe(first())
-  //     .subscribe(
-  //       data => {
-  //         this.router.navigate([this.returnUrl]);
-  //       },
-  //       error => {
-  //         this.error = error;
-  //         this.loading = false;
-  //       });
+    this.showValidateFormMsg();
   }
 
-
-
+  showValidateFormMsg(){
+    if (this.loginForm.get('login').errors) {
+      let loginKey = Object.keys(this.loginForm.get('login').errors);
+      this.formErrorMsg.login = this.loginForm.get('login').errors[loginKey[0]];
+    } else {
+      this.formErrorMsg.login = '';
+    }
+    if (this.loginForm.get('phone').errors) {
+      let phoneKey = Object.keys(this.loginForm.get('phone').errors);
+      this.formErrorMsg.phone = this.loginForm.get('phone').errors[phoneKey[0]];
+    } else {
+      this.formErrorMsg.phone = '';
+    }
+    if (this.loginForm.get('pass').errors) {
+      let passKey = Object.keys(this.loginForm.get('pass').errors);
+      this.formErrorMsg.pass = this.loginForm.get('pass').errors[passKey[0]];
+    } else {
+      this.formErrorMsg.pass = '';
+    }
+    if (this.loginForm.errors) {
+      let confermPassKey = Object.keys(this.loginForm.errors);
+      this.formErrorMsg.confermPass = this.loginForm.errors[confermPassKey[0]];
+    } else {
+      this.formErrorMsg.confermPass = '';
+    }
+    if (this.loginForm.get('mail').errors) {
+      let mailKey = Object.keys(this.loginForm.get('mail').errors);
+      this.formErrorMsg.mail = this.loginForm.get('mail').errors[mailKey[0]];
+    } else {
+      this.formErrorMsg.mail = '';
+    }
+  }
   public loadScript() {
     // console.log('preparing to load...')
     // const node = document.createElement('script');
