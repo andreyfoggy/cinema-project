@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Chair } from '../../shared/models/cinema.models';
 import { StoreService } from 'src/app/shared/services/store.service';
 
@@ -7,7 +7,7 @@ import { StoreService } from 'src/app/shared/services/store.service';
   templateUrl: './seats-area.component.html',
   styleUrls: ['./seats-area.component.scss']
 })
-export class SeatsAreaComponent {
+export class SeatsAreaComponent implements OnInit {
   @Output() chooseChair = new EventEmitter<object>();
 
   public chair: Chair;
@@ -15,9 +15,12 @@ export class SeatsAreaComponent {
   public rows = [];
   public storeReserve = [12, 14, 46];
 
-  constructor() {
+  constructor(private storeService: StoreService) {
     this.createChair();
-    console.log(this.chairs);
+  }
+
+  ngOnInit() {
+    //this.getArray();
   }
   public createChair () {
     let arrChair = 0;
@@ -39,7 +42,6 @@ export class SeatsAreaComponent {
 
   public checkIfDisabled (chair, storeReserve) {
     const item = storeReserve.find( elem => {
-      console.log('chair ' + chair.index);
       return elem === chair.index;
     });
 
@@ -59,6 +61,6 @@ export class SeatsAreaComponent {
   }
 
   public getArray() {
-    // this.store.getBookedTickets();
+     this.storeService.getBookedTickets();
   }
 }
