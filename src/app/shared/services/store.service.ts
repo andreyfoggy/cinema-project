@@ -11,7 +11,7 @@ export class StoreService {
     constructor(private store: Store<State>) {
         this.store.dispatch({ type: FilmsActions.FilmsActionTypes.GET_FILMS });
     }
-    public asynchGetFilms(): Observable<any> {
+    public asynchGetFilms (): Observable<any> {
         return this.store.pipe(select(getFilms));
     }
 }
