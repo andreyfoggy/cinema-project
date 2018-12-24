@@ -22,19 +22,12 @@ export class ScheduleComponent implements OnInit {
   }
   public getDay(day) {
     const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
-<<<<<<< HEAD
     const obj = {label: null, param: null };
     obj.label = new Date();
     obj.label.setDate(obj.label.getDate() + day);
     obj.param = this.getParsedDate(obj.label);
     obj.label =  (obj.label.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${obj.label.getDate()} ${weekDay[obj.label.getDay()]}`;
     return obj;
-=======
-    const newDay = new Date();
-    newDay.setDate(newDay.getDate() + day);
-    console.log(newDay.setDate(newDay.getDate() + day))
-    return (newDay.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
->>>>>>> 7cff1566b46f0854c53969ef60759f3422a1565f
   }
 
   ngOnInit() {

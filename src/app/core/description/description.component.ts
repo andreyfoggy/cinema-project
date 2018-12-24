@@ -25,10 +25,22 @@ export class DescriptionComponent implements OnInit {
 
   public getDay(day) {
     const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
-    const newDay = new Date();
-    newDay.setDate(newDay.getDate() + day);
-    return (newDay.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
+    const obj = {label: null, param: null };
+    obj.label = new Date();
+    obj.label.setDate(obj.label.getDate() + day);
+    obj.param = this.getParsedDate(obj.label);
+    obj.label =  (obj.label.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${obj.label.getDate()} ${weekDay[obj.label.getDay()]}`;
+    return obj;
   }
+
+  private getParsedDate(millisconds) {
+    const date = new Date(millisconds);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${day}.${month}.${year}`;
+  }
+
 
   public showTrailer () {
     this.toggleTrailer = !this.toggleTrailer;
