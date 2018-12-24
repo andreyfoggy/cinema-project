@@ -15,6 +15,7 @@ export class BookTicketsComponent {
   public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
 
   constructor (private storeService: StoreService) {
+
   }
   public getChair(event) {
     if (event.reserve === true) {
@@ -26,7 +27,6 @@ export class BookTicketsComponent {
         }
       });
     }
-
     this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false;
   }
   public getSessionData(data) {

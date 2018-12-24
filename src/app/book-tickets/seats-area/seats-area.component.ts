@@ -25,6 +25,7 @@ export class SeatsAreaComponent implements OnInit {
         .subscribe(params => {
           const filmParams = params;
           this.getSessions(filmParams);
+          console.log (filmParams);
       });
   }
   public createChair () {

@@ -32,25 +32,26 @@
                 border: 2px solid #ffba00;
                 border-radius: 5px;
             }
+
+            .btn {
+                display: block;
+                margin: 0 auto;
+                margin-top: 20px;
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: #ffba00;
+                color: #ffffff; 
+                box-shadow: 2px 2px 1px 0px #000000;
+                border: 1px solid #000000;
+                transition-duration: .5s;
+                cursor: pointer;
+                font: inherit;
+            }
+            .btn:hover {
+                background-color: #ff8800;
+                color: #ffffff;
+                text-shadow: 0 0 5px #000000;
+            }
         }
     }
-}
-.btn {
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  padding: 10px 15px;
-  border-radius: 5px;
-  background-color: #ffba00;
-  color: #ffffff; 
-  box-shadow: 2px 2px 1px 0px #000000;
-  border: 1px solid #000000;
-  transition-duration: .5s;
-  cursor: pointer;
-  font: inherit;
-}
-.btn:hover {
-    background-color: #ff8800;
-    color: #ffffff;
-    text-shadow: 0 0 5px #000000;
 }
