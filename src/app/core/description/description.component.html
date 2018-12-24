@@ -38,7 +38,11 @@
     <div class="line"></div>
     <ul class="schedule-filter">
       <i class="fas fa-calendar-alt"></i>
-      <li *ngFor="let day of days"><a>{{day.label}}</a></li>
+      <li *ngFor="let day of days">
+        <a [routerLink]="['/gallery/description', film.id]"
+            [queryParams]="{date: day.param}"
+        >{{day.label}}</a>
+      </li>
     </ul>
   <div class="schedule-list">
     <div  class="schedule-item">
@@ -53,7 +57,7 @@
             <li [routerLink]="'/tickets'"
                 [queryParams]="{ 
                   time: i,
-                  date: '28.12.2018',
+                  date: date,
                   film: film.name
                 }">
                 {{time}}
