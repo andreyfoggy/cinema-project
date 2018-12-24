@@ -43,8 +43,11 @@ export class DescriptionComponent implements OnInit {
   }
 
 
-  public showTrailer () {
+  public showTrailer ($element) {
     this.toggleTrailer = !this.toggleTrailer;
+    if (this.toggleTrailer === true) {
+      $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    }
   }
 
   public scrollTo ($element) {

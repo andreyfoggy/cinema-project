@@ -4,7 +4,7 @@
     <div class="film-name">
       <h2>{{film.name}}</h2>
     </div>
-    <div class="block trailer" (click)="showTrailer()">ТРЕЙЛЕР</div>
+    <div class="block trailer" (click)="showTrailer(trailer)">ТРЕЙЛЕР</div>
     <div class="block tickets" (click)="scrollTo(ticket)">БИЛЕТЫ</div>
     <div class="descr-box">
       <div class="descr-box-up">
@@ -27,9 +27,11 @@
     </div>
   </div>
   <div>
-    <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
-      {{iframe_html}}
-    </div>
+    
+      <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
+        {{iframe_html}}
+      </div>
+      <div #trailer></div>
   </div>
   <div class="schedule wrapper" #ticket>
     <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
