@@ -5,12 +5,12 @@
   <div class="schedule wrapper">
       <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
       <div class="line"></div>
-      <ul class="filter">
+      <ul class="schedule-filter">
         <i class="fas fa-calendar-alt"></i>
         <li *ngFor="let day of days"><a>{{day}}</a></li>
       </ul>
-    <ul class="schedule-list" *ngFor="let film of filmList; let i = index;">
+    <div class="schedule-list" *ngFor="let film of filmList; let i = index;">
       <app-schedule-item [item]="film"></app-schedule-item>
-    </ul>
+    </div>
   </div>
 </section>
