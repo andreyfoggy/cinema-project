@@ -14,19 +14,27 @@ export class DescriptionComponent implements OnInit {
   public iframe_html: string;
   public toggleTrailer: boolean;
   public film: any;
-  private fragment: string;
+  public days = [];
 
   constructor(private route: ActivatedRoute, private embedService: EmbedVideoService,
-     private router: Router, private mock: MockService) {
-
-
+      private router: Router, private mock: MockService) {
+      for (let d = 0; d < 5; d++) {
+        this.days.push(this.getDay(d));
+      }
   }
+
+  public getDay(day) {
+    const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
+    const newDay = new Date();
+    newDay.setDate(newDay.getDate() + day);
+    return (newDay.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${newDay.getDate()} ${weekDay[newDay.getDay()]}`;
+  }
+
   public showTrailer () {
     this.toggleTrailer = !this.toggleTrailer;
   }
 
-  async scrollTo ($element) {
-      await this.showTrailer ();
+  public scrollTo ($element) {
       $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 
@@ -34,6 +42,7 @@ export class DescriptionComponent implements OnInit {
     this.route.params
       .subscribe(params => {
         this.film = this.mock.getFilmById(Number(params['id']));
+        console.log(this.film);
     });
     this.iframe_html = this.embedService
       .embed(this.film.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
