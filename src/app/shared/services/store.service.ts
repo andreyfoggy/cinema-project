@@ -1,15 +1,15 @@
 import { select, Store } from '@ngrx/store';
 import { PushAction } from '../../core/store/actions/films.actions';
 import * as filmSelectors from '../../core/store/films.selectors';
-import { State, getFilms } from '../../core/store/index';
-import { Injectable } from '@angular/core';
+import { State } from '../../core/store/index';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable()
-export class StoreService {
+export class StoreService implements OnInit {
     private sessionList$: Observable<any>;
     constructor(private store: Store<State>) {
-        this.sessionList$ = this.store.select(filmSelectors.getFilmsState);
+        this.sessionList$ = this.store.select('films');
     }
     public pushBookedTickets(item): void {
         this.store.dispatch(new PushAction(item));
@@ -17,4 +17,7 @@ export class StoreService {
     public getBookedTickets() {
         return this.sessionList$;
     }
+    ngOnInit() {
+    }
 }
+

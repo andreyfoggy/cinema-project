@@ -10,10 +10,11 @@ export class BookTicketsComponent {
 
   public canBuyTicket: Boolean = false;
   public chooseTickets = [];
+  public disabledChairs = [];
   public costTicket: Number = 90.00;
+  public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
 
-  constructor () {
-    console.log(this.chooseTickets);
+  constructor (private storeService: StoreService) {
   }
   public getChair(event) {
     if (event.reserve === true) {
@@ -27,10 +28,22 @@ export class BookTicketsComponent {
     }
 
     this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false;
-    console.log(this.canBuyTicket);
+  }
+  public getSessionData(data) {
+    this.dataToSend = data;
   }
 
   makeOrder() {
-  //  console.log(this);
+    const sessionInfo = {
+      time: Number(this.dataToSend.params.time),
+      date: this.dataToSend.params.date,
+      film: this.dataToSend.params.film,
+      seats: this.dataToSend.chairs.concat(this.getChosenTickets(this.chooseTickets))
+    };
+
+    this.storeService.pushBookedTickets(sessionInfo);
+  }
+  private getChosenTickets(tickets) {
+    return tickets.map( ticket => ticket.index);
   }
 }

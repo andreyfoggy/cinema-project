@@ -19,7 +19,6 @@ export class ScheduleComponent implements OnInit {
     for (let d = 0; d < 5; d++) {
       this.days.push(this.getDay(d));
     }
-    console.log(this.filmList);
   }
   public getDay(day) {
     const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];

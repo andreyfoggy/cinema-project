@@ -10,6 +10,7 @@
     </div>
     <app-seats-area class="seats-area"
         (chooseChair)="getChair($event)"
+        (dataToSend)="getSessionData($event)"
     >
     </app-seats-area>
     <div class="box-info" >
@@ -23,7 +24,7 @@
             <div>
                 <span>Всего {{costTicket * chooseTickets.length}} грн. </span>
             </div>
-            <button class='btn reserv-btn'>Купить</button>
+            <button (click)="makeOrder()"class='btn reserv-btn'>Купить</button>
         </div>
     </div>
 </section>
