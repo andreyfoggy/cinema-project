@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DescriptionComponent } from './description/description.component';
 import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     HeaderComponent,

@@ -1,12 +1,12 @@
 <div  class="item">
   <div class = "item-image">
-    <figure><img src={{item.poster}} alt=""></figure>
+    <img src={{item.poster}} [routerLink]="['description', item.id]" alt="">
   </div>
   <div class="item-description">
-      <a class="item-title" [routerLink]="['description', item.id]">{{item.title}}</a>
+      <a class="item-title" [routerLink]="['description', item.id]">{{item.name}}</a>
       <span>Genre: {{item.genre}}</span><br>
       <span>Time:</span>
-      <ul  class="item-time" *ngFor="let time of timeList; let i = index;">
+      <ul  class="item-time" *ngFor="let time of item.sessions; let i = index;">
         <li [routerLink]="'tickets'">{{time}}</li>
       </ul>
   </div>

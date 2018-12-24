@@ -6,6 +6,8 @@ import { PosterComponent } from './poster/poster.component';
 import { CoreModule } from '../core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     GalleryComponent,
@@ -16,6 +18,7 @@ import { EmbedVideo } from 'ngx-embed-video';
     GalleryRoutingModule,
     CoreModule,
     HttpClientModule,
+    FormsModule,
     EmbedVideo.forRoot()
   ]
 })

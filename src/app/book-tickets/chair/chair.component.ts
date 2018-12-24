@@ -14,10 +14,10 @@ export class ChairComponent {
   }
 
   reserveSeat() {
-    //this.chair = {...this.chair, reserve = !reserse}
-    if (this.chair.disabled) return
-    this.chair.reserve = !this.chair.reserve
-    console.log( this.chair)
+    // this.chair = {...this.chair, reserve = !reserse}
+    if ( this.chair.disabled ) { return; }
+    this.chair.reserve = !this.chair.reserve;
+    console.log( this.chair);
     this.chooseChair.emit(this.chair);
   }
 }

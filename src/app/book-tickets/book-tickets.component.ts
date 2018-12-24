@@ -6,28 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./book-tickets.component.scss']
 })
 export class BookTicketsComponent {
-  
-  public canBuyTicket: boolean = false
-  public chooseTickets = []
-  public costTicket: number = 90.00
-  
+
+  public canBuyTicket: Boolean = false;
+  public chooseTickets = [];
+  public costTicket: Number = 90.00;
+
   constructor () {
-    console.log(this.chooseTickets)
+    console.log(this.chooseTickets);
   }
-  public getChair(event){
-    if (event.reserve == true) {
-      this.chooseTickets.push(event) 
-    }
-    else {
+  public getChair(event) {
+    if (event.reserve === true) {
+      this.chooseTickets.push(event);
+    } else {
       this.chooseTickets.forEach( (item, i) => {
-        if (item.reserve == false) {
-          this.chooseTickets.splice ( i, 1 ) 
-        } 
+        if (item.reserve === false) {
+          this.chooseTickets.splice ( i, 1 );
+        }
       });
     }
-    
-    this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false
-    console.log(this.canBuyTicket)
+
+    this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false;
+    console.log(this.canBuyTicket);
   }
 
   makeOrder() {

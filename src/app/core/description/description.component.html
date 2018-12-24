@@ -1,28 +1,28 @@
 <app-header></app-header>
 <section class="descr">
-  <div class="descr-container" [ngStyle]="{'background-image': 'url(' + filmList.image.split('@')[1] + ')'}"> 
+  <div class="descr-container" > 
     <div class="film-name">
-      <h2>{{filmList.name}}</h2>
+      <h2></h2>
     </div>
     <div class="block trailer" (click)="showTrailer()">ТРЕЙЛЕР</div>
     <div class="block tickets">БИЛЕТЫ</div>
     <div class="descr-box">
       <div class="descr-box-up">
         <div class="poster">
-            <img src="{{filmList.image.split('@')[0]}}" alt=''>  
+            <img src="" alt=''>  
         </div>
         <div class="genre">
-          <h3>{{filmList.name}}</h3>
-          <p><b>Страна, год: </b>{{filmList.genre.split('/')[0]}}</p>
-          <p><b>Жанр: </b>{{filmList.genre.split('/')[1]}}</p>
-          <p><b>Режиссёр: </b>{{filmList.genre.split('/')[2]}}</p>
-          <p><b>В ролях: </b>{{filmList.genre.split('/')[3]}}</p>
-          <p><b>Продолжительность: </b>{{filmList.genre.split('/')[4]}}</p>
+          <h3></h3>
+          <p><b>Страна, год: </b></p>
+          <p><b>Жанр: </b></p>
+          <p><b>Режиссёр: </b></p>
+          <p><b>В ролях: </b></p>
+          <p><b>Продолжительность: </b></p>
         </div>
       </div>
       <div class="descr-box-down">
         <h4>Описание</h4>
-          {{filmList.genre.split('/')[5]}}
+          
       </div>
     </div>
   </div>
