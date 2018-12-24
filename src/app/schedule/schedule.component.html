@@ -7,7 +7,7 @@
       <div class="line"></div>
       <ul class="filter">
         <i class="fas fa-calendar-alt"></i>
-        <li *ngFor="let day of days"><a>{{day}}</a></li>
+        <li *ngFor="let day of days"><a>{{day.label}}</a></li>
       </ul>
     <ul class="schedule-list" *ngFor="let film of filmList; let i = index;">
       <app-schedule-item [item]="film"></app-schedule-item>
