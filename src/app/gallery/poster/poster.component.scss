@@ -7,11 +7,11 @@
 
     .film-poster {
         overflow: hidden;
-        max-height: 258px;
+        height: 250px;
 
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
             transition: .8s;
         }
     }
@@ -21,7 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 175px;
+        width: 174px;
         position: absolute;
         top: 0;
         color: #fff;

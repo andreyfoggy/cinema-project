@@ -6,11 +6,11 @@
   <ul class="film-list">
     <div class="item-box" *ngFor="let film of filmList; let i = index; let even = even" [ngClass] = "{even:even}">
       <app-poster
-        [item]="film" 
+        [film]="film" 
         [routerLink]="['description', film.id]"
+        (chooseFilm)="getFilm($event)"
       >
       </app-poster>
     </div>
   </ul>
 </section>
-<app-footer></app-footer>

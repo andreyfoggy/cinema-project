@@ -1,11 +1,11 @@
-<li class="item">
+<li class="item" (click)="getFilm()">
   <div class="film-poster">
-    <img src={{item.poster}} alt="">
+    <img src={{film.poster}} alt="">
   </div>
   <div class="premiere-title">
     <span>Премьера</span>
   </div>
   <div class="film-title">
-     <p>{{(item.name.length>40)? (item.name | slice:0:40)+'...' : (item.name)  }}</p>   
+     <p>{{(film.name.length>40)? (film.name | slice:0:40)+'...' : (film.name)  }}</p>   
   </div>
 </li>

@@ -9,38 +9,30 @@ import { FilmList } from '../shared/storage/images';
 })
 export class GalleryComponent implements OnInit {
   private fullList = [];
-  public filmList = [];
+  public filmList = FilmList;
+  public film: any;
 
-  constructor(private http: HttpService) {
-
+  constructor() {
+    // let test = store.asynchGetFilms();
     this.fullList = JSON.parse(JSON.stringify(this.filmList));
+    console.log (this);
+  }
+
+  public getFilm(event) {
+    this.film = event;
+    console.log (this.film);
   }
 
   ngOnInit() {
-    this.http.getFilms()
-      .subscribe(filmsData => {
-        filmsData.map( item => {
-          this.filmList = this.createFilmList(FilmList, filmsData);
-        });
-      });
+
   }
 
-  private createFilmList(store, filmData) {
-    return filmData.map(item => addStoreData(item));
-    function addStoreData(item) {
-      const film = store.find(storeItem => item.Id === storeItem.id);
-      film.genre = item.Genre.Name;
-      film.name = item.Name;
-      return film;
-    }
-  }
-
-  filterFilms(value) {
-    const searchQuery = value.toLowerCase();
-    this.filmList = JSON.parse(JSON.stringify(this.fullList));
-    this.filmList = this.filmList.filter((item) => {
-        const searchValue = item.title.toLowerCase();
-        return searchValue.indexOf(searchQuery) !== -1;
-    });
-  }
+  // filterFilms(value) {
+  //   const searchQuery = value.toLowerCase();
+  //   this.filmList = JSON.parse(JSON.stringify(this.fullList));
+  //   this.filmList = this.filmList.filter((item) => {
+  //       const searchValue = item.title.toLowerCase();
+  //       return searchValue.indexOf(searchQuery) !== -1;
+  //   });
+  // }
 }

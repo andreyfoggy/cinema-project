@@ -15,15 +15,24 @@ export class SeatsAreaComponent {
   public rows = [];
   public storeReserve = [12, 14, 46];
 
+<<<<<<< HEAD
   constructor(private store: StoreService) {
+=======
+  constructor() {
+>>>>>>> refs/remotes/origin/dev
     this.createChair();
     console.log(this.chairs);
   }
   public createChair () {
     let arrChair = 0;
     for (let i = 1; i < 8; i++ ) {
+<<<<<<< HEAD
       this.rows.push(i);
       for (let x = 1; x < 9; x++ ){
+=======
+      this.rows.push (i);
+      for (let x = 1; x < 9; x++ ) {
+>>>>>>> refs/remotes/origin/dev
         arrChair++;
         this.chair = {
           index: arrChair,

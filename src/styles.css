@@ -14,7 +14,12 @@
 	-moz-box-sizing: border-box;
 }
 body {
-	background: #e7e4e2; 
+	/* background: #e7e4e2;  */ 
+	background-image: url('https://getreelcinemas.com//wp-content/uploads/2015/02/Background-Narrow.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 .clearfix:after{
 	content: "";

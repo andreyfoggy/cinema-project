@@ -9,7 +9,11 @@ const routes: Routes = [
     path: '', component: GalleryComponent
   },
   {
-    path: 'description/:id', component: DescriptionComponent
+    path: 'description/:id',
+    component: DescriptionComponent,
+    data: {
+      film: GalleryComponent
+    }
   },
   {
     path: '**', redirectTo: ''

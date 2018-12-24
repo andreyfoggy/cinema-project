@@ -1,21 +1,11 @@
-.schedule-wrapper {
+.schedule {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 20px;
-    margin:auto;
-    margin-top:10px;
-    width:90%;
-}
-.schedule-list{
-    margin-top:20px;
-}
-h1{
-    font-family: 'Merriweather', serif;
-    color:rgb(37, 36, 36);
 }
 .line{
-    margin-top:20px;
-    width:100%;
-    border-top: 2px solid lightgrey;
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #ff8800;
 }
 .filter {
     max-width: 520px;
@@ -24,17 +14,21 @@ h1{
     display:flex;
     justify-content: space-around;
     align-items: center;
+
     .fas {
         font-size: 28px;
         color: grey;
     }
+
     li {
         display: inline-block;
         padding: 3px 10px;
+        
         a {
             color:rgb(83, 83, 83);
             font-size: 20px;
             padding: 3px 10px;
+
             &:hover {
                 cursor: pointer;
                 color:black;

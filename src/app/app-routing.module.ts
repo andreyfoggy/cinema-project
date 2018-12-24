@@ -21,7 +21,7 @@ const routes: Routes = [
     loadChildren: './book-tickets/book-tickets.module#BookTicketsModule'
   },
   {
-    path: '**', redirectTo: ''
+    path: '**', redirectTo: 'gallery'
   }
 ];
 

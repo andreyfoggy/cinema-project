@@ -8,15 +8,16 @@ import { StoreService } from '../shared/services/store.service';
 })
 export class BookTicketsComponent {
 
-  public canBuyTicket = false;
+  public canBuyTicket: Boolean = false;
   public chooseTickets = [];
-  public costTicket = 90.00;
+  public costTicket: Number = 90.00;
 
-  constructor (private store: StoreService) {
+  constructor () {
+    console.log(this.chooseTickets);
   }
   public getChair(event) {
     if (event.reserve === true) {
-      this.chooseTickets.push(event) ;
+      this.chooseTickets.push(event);
     } else {
       this.chooseTickets.forEach( (item, i) => {
         if (item.reserve === false) {
@@ -24,7 +25,9 @@ export class BookTicketsComponent {
         }
       });
     }
+
     this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false;
+    console.log(this.canBuyTicket);
   }
 
   makeOrder() {
