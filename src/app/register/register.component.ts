@@ -1,17 +1,28 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ValidatorFormRegister} from './validatorFormRegister';
 import {standartBase} from './standartBaseUser';
+import { ReCaptchaComponent } from 'angular2-recaptcha';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  @ViewChild('captchaRef') recaptchControl: ReCaptchaComponent;
   validatorForm = new ValidatorFormRegister();
   loginForm: FormGroup;
-  public formErrorMsg = {
+  captchaStatus = false;
+
+  formErrorMsg = {
+    login: '',
+    phone: '',
+    pass: '',
+    confermPass: '',
+    mail: ''
+  };
+  valueForm = {
     login: '',
     phone: '',
     pass: '',
@@ -36,15 +47,53 @@ export class RegisterComponent implements OnInit {
       confirmPass: ['', []],
     });
     this.loginForm.setValidators(this.validatorForm.validatorConfirmPass);
-    localStorage.setItem("userBase",JSON.stringify(standartBase));
+    localStorage.setItem('userBase', JSON.stringify(standartBase));
+    this.captchaStatus = false;
     this.loadScript();
   }
+  resetrRecapcha(){
 
+  }
   public onSubmit() {
-    this.showValidateFormMsg();
+    this.recaptchControl.reset();
+    // this.showValidateFormMsg();
+    // if (this.loginForm.status === 'VALID' && this.captchaStatus === true) {
+    //   this.addUserLocalStorage();
+    //   this.clearInpputForm();
+    //   alert('Регистрация успешна');
+    // }
+    // else {
+    //   alert('Проверьте поля ввода и "я не робот"');
+    // }
   }
 
-  showValidateFormMsg(){
+  addUserLocalStorage() {
+    let strBase = localStorage.getItem('userBase');
+    let baseUser = JSON.parse(strBase);
+    baseUser.push({
+      login: this.loginForm.get('login').value,
+      pass: this.loginForm.get('pass').value,
+      mail: this.loginForm.get('mail').value,
+      phone: this.loginForm.get('phone').value
+    });
+    localStorage.setItem('userBase', JSON.stringify(baseUser));
+  }
+
+  clearInpputForm() {
+    this.valueForm.login = '';
+    this.valueForm.phone = '';
+    this.valueForm.pass = '';
+    this.valueForm.confermPass = '';
+    this.valueForm.mail = '';
+  }
+
+  resolved(captchaResponse: string) {
+    if (captchaResponse) {
+      this.captchaStatus = true;
+    }
+  }
+
+  showValidateFormMsg() {
     if (this.loginForm.get('login').errors) {
       let loginKey = Object.keys(this.loginForm.get('login').errors);
       this.formErrorMsg.login = this.loginForm.get('login').errors[loginKey[0]];
@@ -76,6 +125,7 @@ export class RegisterComponent implements OnInit {
       this.formErrorMsg.mail = '';
     }
   }
+
   public loadScript() {
     // console.log('preparing to load...')
     // const node = document.createElement('script');
