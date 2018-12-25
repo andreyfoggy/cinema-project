@@ -40,7 +40,9 @@
       <li *ngFor="let day of days">
         <a [routerLink]="['/gallery/description', film.id]"
             [queryParams]="{date: day.param}"
-        >{{day.label}}</a>
+            [ngClass]="{'day-link': day.param === date}">
+            {{day.label}}
+        </a>
       </li>
     </ul>
   <div class="schedule-list">
