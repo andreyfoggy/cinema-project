@@ -59,14 +59,9 @@ export class RegisterComponent implements OnInit {
   public onSubmit() {
     this.showValidateFormMsg();
     if (this.loginForm.status === 'VALID' && this.captchaStatus === true) {
-
       this.clearInpputForm();
       this.resetrRecapcha();
-      alert('Регистрация успешна');
     this.router.navigateByUrl("/gallery");this.addUserLocalStorage();
-    }
-    else {
-      alert('Проверьте поля ввода и "я не робот"');
     }
   }
 
