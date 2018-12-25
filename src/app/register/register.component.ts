@@ -59,14 +59,9 @@ export class RegisterComponent implements OnInit {
   public onSubmit() {
     this.showValidateFormMsg();
     if (this.loginForm.status === 'VALID' && this.captchaStatus === true) {
-
       this.clearInpputForm();
       this.resetrRecapcha();
-      alert('Регистрация успешна');
     this.router.navigateByUrl("/gallery");this.addUserLocalStorage();
-    }
-    else {
-      alert('Проверьте поля ввода и "я не робот"');
     }
   }
 
@@ -130,12 +125,12 @@ export class RegisterComponent implements OnInit {
   }
 
   public loadScript() {
-    // console.log('preparing to load...')
-    // const node = document.createElement('script');
-    // node.src = './src/app/register/snow.js';
-    // node.type = 'text/javascript';
-    // node.async = true;
-    // node.charset = 'utf-8';
+    const node = document.createElement('script');
+    node.src = './src/app/register/snow.js';
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
     // document.getElementsByTagName('body')[0].appendChild(node);
+    document.getElementsByClassName('registerContent')[0].appendChild(node);
   }
 }

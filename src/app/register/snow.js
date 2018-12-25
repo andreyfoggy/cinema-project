@@ -105,7 +105,7 @@ function movesnow() {
 for (i=0;i<=snowmax;i++) {
       const span = document.createElement('div');
       span.innerHTML="<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>";
-      document.getElementsByTagName('body')[0].appendChild(span);
+      document.getElementsByClassName('registerContent')[0].appendChild(span);
 }
 if (browserok) {
         window.onload=initsnow
