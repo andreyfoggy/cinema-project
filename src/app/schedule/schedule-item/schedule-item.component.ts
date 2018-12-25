@@ -12,7 +12,7 @@ export class ScheduleItemComponent implements OnInit {
   private sub;
   constructor(private route: ActivatedRoute) {
 
-   }
+  }
 
   ngOnInit() {
     this.sub = this.route.queryParams

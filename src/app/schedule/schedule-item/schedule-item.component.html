@@ -8,7 +8,8 @@
       <span>Время:</span>
       <ul  class="item-time" *ngFor="let time of item.sessions; let i = index;">
         <li [routerLink]="'tickets'"
-            [queryParams]="{ 
+            [queryParams]="{
+              id: item.id,
               time: i,
               date: date,
               film: item.name
