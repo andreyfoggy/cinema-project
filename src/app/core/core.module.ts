@@ -1,6 +1,6 @@
-
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './header/nav/nav.component';
 import { CommonModule } from '@angular/common';
@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     RouterModule,
     ReactiveFormsModule
+    ScrollToModule.forRoot()
   ],
   exports: [
       HeaderComponent,

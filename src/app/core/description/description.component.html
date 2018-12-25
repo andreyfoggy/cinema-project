@@ -1,32 +1,72 @@
 <app-header></app-header>
 <section class="descr">
-  <div class="descr-container" [ngStyle]="{'background-image': 'url(' + filmList.image.split('@')[1] + ')'}"> 
+  <div class="descr-container" [ngStyle]="{'background-image': 'url(' + film.backImg + ')'}"> 
     <div class="film-name">
-      <h2>{{filmList.name}}</h2>
+      <h2>{{film.name}}</h2>
     </div>
-    <div class="block trailer" (click)="showTrailer()">ТРЕЙЛЕР</div>
-    <div class="block tickets">БИЛЕТЫ</div>
+    <div class="block trailer" (click)="showTrailer(trailer)">ТРЕЙЛЕР</div>
+    <div class="block tickets" (click)="scrollTo(ticket)">БИЛЕТЫ</div>
     <div class="descr-box">
       <div class="descr-box-up">
         <div class="poster">
-            <img src="{{filmList.image.split('@')[0]}}" alt=''>  
+            <img src={{film.poster}} alt=''>  
         </div>
         <div class="genre">
-          <h3>{{filmList.name}}</h3>
-          <p><b>Страна, год: </b>{{filmList.genre.split('/')[0]}}</p>
-          <p><b>Жанр: </b>{{filmList.genre.split('/')[1]}}</p>
-          <p><b>Режиссёр: </b>{{filmList.genre.split('/')[2]}}</p>
-          <p><b>В ролях: </b>{{filmList.genre.split('/')[3]}}</p>
-          <p><b>Продолжительность: </b>{{filmList.genre.split('/')[4]}}</p>
+          <h3>{{film.name}}</h3>
+          <p><b>Страна, год: </b>{{film.year}} </p>
+          <p><b>Жанр: </b> {{film.genre}}</p>
+          <p><b>Режиссёр: </b> {{film.director}}</p>
+          <p><b>В ролях: </b> {{film.cast}}</p>
+          <p><b>Продолжительность: </b> {{film.duration}}</p>
         </div>
       </div>
       <div class="descr-box-down">
         <h4>Описание</h4>
-          {{filmList.genre.split('/')[5]}}
+        <div>{{film.about}}</div>
       </div>
     </div>
   </div>
-  <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html">
-    {{iframe_html}}
+  <div>
+    
+      <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
+        {{iframe_html}}
+      </div>
+      <div #trailer></div>
   </div>
+  <div class="schedule wrapper" #ticket>
+    <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
+    <div class="line"></div>
+    <ul class="schedule-filter">
+      <i class="fas fa-calendar-alt"></i>
+      <li *ngFor="let day of days">
+        <a [routerLink]="['/gallery/description', film.id]"
+            [queryParams]="{date: day.param}"
+            [ngClass]="{'day-link': day.param === date}">
+            {{day.label}}
+        </a>
+      </li>
+    </ul>
+  <div class="schedule-list">
+    <div  class="schedule-item">
+      <div class = "item-image">
+        <img src={{film.poster}} alt="">
+      </div>
+      <div class="item-description">
+          <a class="item-title">{{film.name}}</a>
+          <span>Жанр: {{film.genre}}</span><br>
+          <span>Время:</span>
+          <ul  class="item-time" *ngFor="let time of film.sessions; let i = index;">
+            <li [routerLink]="'/tickets'"
+                [queryParams]="{ 
+                  time: i,
+                  date: date,
+                  film: film.name
+                }">
+                {{time}}
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
 </section>

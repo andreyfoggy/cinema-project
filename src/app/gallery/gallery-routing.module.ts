@@ -9,7 +9,12 @@ const routes: Routes = [
     path: '', component: GalleryComponent
   },
   {
-    path: 'description/:id', component: DescriptionComponent
+    path: 'description/:id',
+    component: DescriptionComponent
+  },
+  {
+    path: 'tickets',
+    loadChildren: './../book-tickets/book-tickets.module#BookTicketsModule'
   },
   {
     path: '**', redirectTo: ''

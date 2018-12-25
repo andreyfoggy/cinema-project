@@ -1,22 +1,30 @@
-img {
-    width: 15px;
-    height: 15px;
+.chair {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: #ffba00;
+    color: #000000;
+    transition: .3s;
+
+    .chair-num {
+        transition: .3s;
+        opacity: 0;
+    }
+
+    &:hover {
+        background-color: #ff8800;
+        cursor: pointer;
+    }
+
+    &:hover .chair-num {
+        opacity: 1;
+    }
 }
 
-img:hover,
-img:focus,
-img:active {
-    cursor: pointer;
-    background: url('../../../assets/images/user-solid.svg');  
-}
-
-p {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-p:hover,
-p:focus,
-p:active {
-    cursor: pointer;
+.cursor:hover {
+    background-color: #ffba00;
+    cursor: default;
 }

@@ -1,17 +1,17 @@
-.wrapper {
-	width: 100%;
-	max-width: 1020px;
-	margin: auto;
-}
-ul  {
+.film-list  {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; 
-}
-.item-box {
-    margin-bottom: 25px;
-    width: 175px;
-    text-align: center;
-    position: relative;
+
+    .item-box {
+        width: 100%;
+        max-width: 175px;
+        margin: 0 10px 25px 10px;
+        text-align: center;
+
+        .poster {
+            outline: 0;
+        }
+    }
 }

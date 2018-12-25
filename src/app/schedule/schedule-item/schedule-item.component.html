@@ -1,13 +1,21 @@
-<div  class="item">
+<div  class="schedule-item">
   <div class = "item-image">
-    <figure><img src={{item.poster}} alt=""></figure>
+    <img src={{item.poster}} [routerLink]="['description', item.id]" alt="">
   </div>
   <div class="item-description">
-      <a [routerLink]="['description', item.id]">{{item.title}}</a>
-      <span>genre: Fantasy</span><br>
-      time:
-      <ul *ngFor="let time of timeList; let i = index;">
-        <li [routerLink]="'tickets'">{{time}}</li>
+      <a class="item-title" [routerLink]="['description', item.id]">{{item.name}}</a>
+      <span>Жанр: {{item.genre}}</span><br>
+      <span>Время:</span>
+      <ul  class="item-time" *ngFor="let time of item.sessions; let i = index;">
+        <li [routerLink]="'tickets'"
+            [queryParams]="{ 
+              time: i,
+              date: date,
+              film: item.name
+            }">
+            {{time}}
+        </li>
       </ul>
+      <p class="date-period">В прокате с {{item.startDate}} до {{item.endDate}}</p><br>
   </div>
 </div>

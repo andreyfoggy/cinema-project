@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { EmbedVideoService } from 'ngx-embed-video';
+import { MockService } from 'src/app/shared/services/mock.service';
 
 @Component({
   selector: 'app-description',
@@ -13,26 +13,59 @@ import { EmbedVideoService } from 'ngx-embed-video';
 export class DescriptionComponent implements OnInit {
   public iframe_html: string;
   public toggleTrailer: boolean;
-  public filmList =
-    {
-      name: 'Фантастические звери: Преступления Гриндельвальда',
-      genre: 'Великобритания, США, 2018 / Фэнтези, приключения/ Дэвид Йэтс / Эдди Редмэйн, Джуд Лоу, Джонни Депп, Зои Кравитц, Кэтрин Уотерстоун, Дэн Фоглер, Элисон Судол, Эзра Миллер / 134 мин. / Могущественный тёмный волшебник Геллерт Грин-де-Вальд пойман в Штатах, но не собирается молча сидеть в темнице и устраивает грандиозный побег. Теперь ничто не помешает ему добиться своей цели — установить превосходство волшебников над всеми немагическими существами на планете. Чтобы сорвать планы Грин-де-Вальда, Альбус Дамблдор обращается к своему бывшему студенту Ньюту Саламандеру, который соглашается помочь, не подозревая, какая опасность ему грозит. В раскалывающемся на части волшебном мире любовь и верность проверяются на прочность, а конфликт разделяет даже настоящих друзей и членов семей.',
-      image: 'https://api.vkino.com.ua/posters/46/46ddca24f9a0dd39089259d9531d475e673e8fa8.C175x248.jpg @https://pioner-cinema.ru/wp-content/uploads/2018/10/pioner-cinema.ru_e3c1712ed50fca219faeb2d1c1a889d7.jpg',
-      youtube: 'https://www.youtube.com/watch?v=TwvJe2VwhTU',
-      id: 0
-    };
-    public id: number;
-    private subscription: Subscription;
-    constructor(private route: ActivatedRoute, private embedService: EmbedVideoService) {
-      this.subscription = route.params.subscribe(params => this.id = params['id']);
-      this.iframe_html = this.embedService
-        .embed(this.filmList.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
-      console.log(this.filmList.id);
+  public film: any;
+  public days = [];
+  public date: String;
+
+  constructor(private route: ActivatedRoute, private embedService: EmbedVideoService,
+      private router: Router, private mock: MockService) {
+  }
+
+  public getDay(day) {
+    const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
+    const obj = {label: null, param: null };
+    obj.label = new Date();
+    obj.label.setDate(obj.label.getDate() + day);
+    obj.param = this.getParsedDate(obj.label);
+    obj.label =  (obj.label.getDate() ===  new Date().getDate() ) ? 'Сегодня' :  `${obj.label.getDate()} ${weekDay[obj.label.getDay()]}`;
+    return obj;
+  }
+
+  private getParsedDate(millisconds) {
+    const date = new Date(millisconds);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${day}.${month}.${year}`;
+  }
+
+
+  public showTrailer ($element) {
+    this.toggleTrailer = !this.toggleTrailer;
+    if (this.toggleTrailer === true) {
+      $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
     }
-    public showTrailer () {
-      this.toggleTrailer = !this.toggleTrailer;
-    }
+  }
+
+  public scrollTo ($element) {
+      $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+  }
 
   ngOnInit() {
+    for (let d = 0; d < 5; d++) {
+      this.days.push(this.getDay(d));
+    }
+    this.route.params
+      .subscribe(params => {
+        this.film = this.mock.getFilmById(Number(params['id']));
+        this.route.queryParams
+          .subscribe(dateParams => {
+            this.date = dateParams.date;
+          });
+      });
+
+    this.iframe_html = this.embedService
+      .embed(this.film.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
   }
 }
+

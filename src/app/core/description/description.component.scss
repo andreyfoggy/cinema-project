@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 .descr {
     font-family: 'PT Sans Narrow', sans-serif;
     position: absolute;
@@ -6,89 +5,101 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-}
-.block {
-    position: absolute;
-    top: 80px;
-    font-size: 20px;
-    text-align: center;
-    text-indent: 15px;
-    padding: 14px;
-    background: #ffa700;
-    position: relative;
-    width: 100px; height: 50px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
-.block::after {
-    content: ''; 
-    position: absolute;
-    right: -50px; 
-    top: 0;
-	border-top: 25px solid transparent;
-	border-left: 50px solid #ffa700;
-    border-bottom: 25px solid transparent;
-}
-.trailer {
-    margin-bottom: 20px;
-}
-.block:hover {
-    cursor: pointer;
-}
-.descr-container {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-origin: content-box;
-    margin-bottom: 20px;
-}
-.film-name {
-    background: #ffa700;
-    font-size: 30px;
-    padding: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 500px;
-    text-align: center;
-}
-.descr-box {
-    font-size: 17px;
-    width: 500px;
-    padding: 20px;
-    position: absolute;
-    top: 80px;
-    right: 50px;
-    height: 560px;
-    background: rgba(211, 206, 204, 0.7);
-    .descr-box-up {
-        display: flex;
-        margin-bottom: 10px;
-        h3 {
+
+    .descr-container {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-origin: content-box;
+        margin-bottom: 20px;
+
+        .film-name {
+            background: #ffa700;
+            font-size: 30px;
+            padding: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
+        }
+
+        .block {
+            position: absolute;
+            top: 80px;
             font-size: 20px;
-            margin-bottom: 5px;
-        }
-        .poster {
-            
-            img {
-                width: 150px;
-                margin-right: 20px;
-            }
-        }
-        .genre {
-    
-            span {
-                color: #ffa700;
-                font-size: 24px;
-                font-weight: 700;
-            }
-        }
-    }
-    .descr-box-down {
-        // font-size: 16px;
-        h4 {
-            
             text-align: center;
+            text-indent: 15px;
+            padding: 14px;
+            background: #ffa700;
+            position: relative;
+            max-width: 100px;
+            width: 100%; 
+            height: 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+        .block::after {
+            content: ''; 
+            position: absolute;
+            right: -50px; 
+            top: 0;
+            border-top: 25px solid transparent;
+            border-left: 50px solid #ffa700;
+            border-bottom: 25px solid transparent;
+        }
+
+        .block:hover {
+            cursor: pointer;
+        }
+
+        .trailer {
+            margin-bottom: 20px;
+        }
+
+        .descr-box {
+            font-size: 17px;
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            position: absolute;
+            top: 80px;
+            right: 50px;
+            height: 560px;
+            background: rgba(211, 206, 204, 0.7);
+            
+            .descr-box-up {
+                display: flex;
+                margin-bottom: 10px;
+
+                h3 {
+                    text-align: center;
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                }
+                .poster {
+                    
+                    img {
+                        width: 150px;
+                        margin-right: 20px;
+                    }
+                }
+                .genre {
+            
+                    span {
+                        color: #ffa700;
+                        font-size: 24px;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .descr-box-down {
+                
+                h4 {
+                    
+                    text-align: center;
+                }
+            }
         }
     }
 }
@@ -97,4 +108,27 @@
     width: 100%;
     max-width: 780px;
     margin: auto;
+}
+
+.line{
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #ff8800;
+}
+
+.schedule-list {
+    font-size: 20px;
+
+    img:hover {
+        cursor: default;
+    }
+    .item-title:hover {
+        text-decoration-line: none;
+        cursor: default;
+    }
+}
+
+.day-link {
+    color: red;
+    border-bottom: 3px solid grey;
 }

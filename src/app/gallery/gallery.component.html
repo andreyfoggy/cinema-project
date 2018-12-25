@@ -5,12 +5,12 @@
   <h1>Афиша</h1>
   <ul class="film-list">
     <div class="item-box" *ngFor="let film of filmList; let i = index; let even = even" [ngClass] = "{even:even}">
-      <app-poster
-        [item]="film" 
+      <app-poster class="poster"
+        [film]="film" 
         [routerLink]="['description', film.id]"
+        [queryParams]="{ date: date}"
       >
       </app-poster>
     </div>
   </ul>
 </section>
-<app-footer></app-footer>

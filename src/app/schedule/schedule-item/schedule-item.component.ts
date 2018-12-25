@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-item',
@@ -7,10 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ScheduleItemComponent implements OnInit {
   @Input() item = <any>{};
-  public timeList = ['8:00', '14:30', '22:00'];
-  constructor() { }
+  public date: String;
+  private sub;
+  constructor(private route: ActivatedRoute) {
+
+   }
 
   ngOnInit() {
+    this.sub = this.route.queryParams
+        .subscribe(dateParams => this.date = dateParams.date);
+    // this.sub.unsubscribe();
   }
 
 }

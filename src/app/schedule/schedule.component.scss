@@ -1,37 +1,15 @@
-.schedule-wrapper {
-    font-family: 'Playfair Display', serif;
-    margin:auto;
-    margin-top:10px;
-    width:90%;
+.schedule {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
 }
-.schedule-list{
-    margin-top:20px;
+.line {
+    margin-top: 20px;
+    width: 100%;
+    border-top: 3px solid #ff8800;
 }
-h1{
-    font-family: 'Merriweather', serif;
-    color:rgb(37, 36, 36);
+.day-link {
+    color: red;
+    border-bottom: 3px solid grey;
 }
-.line{
-    margin-top:20px;
-    width:100%;
-    border-top: 2px solid lightgrey;
-}
-.filter {
-    width:100%;
-    display:flex;
-    justify-content: space-around;
-    li{
-        display: inline-block;
-        a{
-            color:rgb(83, 83, 83);
-            font-size: 20px;
-            padding: 3px 10px;
-            &:hover {
-                cursor: pointer;
-                color:black;
-                border-bottom: 3px solid grey;
-            }
-        }
-    }
-}
+
 
