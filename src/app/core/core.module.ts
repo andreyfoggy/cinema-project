@@ -21,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     ScrollToModule.forRoot()
   ],
   exports: [
