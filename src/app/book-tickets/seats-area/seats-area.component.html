@@ -1,14 +1,16 @@
-<div class="screen">Экран</div>
+<div class="screen"></div>
 <div class="seats-area">
     <ul class="row">
         <li *ngFor="let row of rows"> Ряд {{row}}</li>
     </ul>
-    <div class="seats">
-        <app-chair class="seat" 
-            *ngFor="let seat of chairs; let idx = index"
-            (chooseChair)="getChair($event)"
-            [chair]="seat" 
-            >
-        </app-chair>
+    <div class="seats-box">
+        <div class="seats">
+            <app-chair
+                *ngFor="let seat of chairs; let idx = index"
+                (chooseChair)="getChair($event)"
+                [chair]="seat" 
+                >
+            </app-chair>
+        </div>
     </div>
 </div>

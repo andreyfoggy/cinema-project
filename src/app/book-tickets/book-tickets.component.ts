@@ -13,6 +13,7 @@ export class BookTicketsComponent {
   public disabledChairs = [];
   public costTicket: Number = 90.00;
   public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
+  public film: object;
 
   constructor (private storeService: StoreService) {
 
@@ -41,7 +42,6 @@ export class BookTicketsComponent {
       film: this.dataToSend.params.film,
       seats: this.dataToSend.chairs.concat(this.getChosenTickets(this.chooseTickets))
     };
-
     this.storeService.pushBookedTickets(sessionInfo);
   }
 
@@ -50,6 +50,7 @@ export class BookTicketsComponent {
   }
 
   public getFilmInfo (film) {
-    console.log (film);
+    this.film = film;
+    console.log(film);
   }
 }

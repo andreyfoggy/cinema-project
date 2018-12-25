@@ -16,7 +16,6 @@
    transform: translate(-50%,-50%);
 }
 .seats-area {
-    // font-family: 'PT Sans Narrow', sans-serif;
     position: relative;
     width: 100%;
     max-width: 480px;
@@ -35,28 +34,60 @@
         li {
             margin-bottom: 28px;
             transition: 0.2s;
-            // border-radius: 3px;
-            // background: grey;
         }
     }
-
-    .seats {
+    .seats-box {
+        position: relative;
         max-width: 460px;
         width: 100%;
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: auto;
-        //margin: 150px auto 40px;
         padding: 20px 60px;
-        border-radius: 5px;
         background-color: lightgoldenrodyellow;
+        border-radius: 5px;    
         color: #000000;
-        
-        .seat {
-            margin: 8px 2px;
+        margin: auto;
+
+        .seats { 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .seats-area {
+    
+        .row {
+
+            li {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .seats-area {
+        max-width: 320px;
+
+        .row {
+            left: 5px;
+            margin-top: 26px;
+    
+            li {
+                margin-bottom: 11px;
+            }
+        }
+
+        .seats-box {
+            padding: 20px 10px;
+
+            .seats {
+                margin: auto;
+                width: 224px;
+            }
         }
     }
 }
