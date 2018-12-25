@@ -13,7 +13,7 @@ export class GalleryComponent implements OnInit {
   public fullList = [];
   public film: any;
   public sessionList$;
-
+  public date: string;
   constructor(private mock: MockService) {
 
   }
@@ -21,6 +21,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     this.filmList = this.mock.getFilms();
     this.fullList = this.mock.getFilms();
+    this.date = this.getParsedDate(new Date().getTime());
   }
 
   filterFilms(value) {
@@ -30,5 +31,12 @@ export class GalleryComponent implements OnInit {
         const searchValue = item.name.toLowerCase();
         return searchValue.indexOf(searchQuery) !== -1;
     });
+  }
+  private getParsedDate(millisconds) {
+    const date = new Date(millisconds);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${day}.${month}.${year}`;
   }
 }
