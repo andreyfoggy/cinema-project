@@ -56,6 +56,8 @@ h1 {
 	color: #ffa700;
 }
 .schedule-item {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
     display: flex;
     width: 100%;
     background-color: #e7e4e2;;
@@ -120,22 +122,29 @@ h1 {
 
     .fas {
         font-size: 28px;
-        color: grey;
+        color: #ff8800;
+    }
+
+    .day-link {
+        color: #ff8800;
+        border-bottom: 3px solid #ff8800;
     }
 
     li {
         display: inline-block;
         padding: 3px 10px;
         
+        
         a {
             color:rgb(83, 83, 83);
             font-size: 20px;
             padding: 3px 10px;
+            transition: .3s;
 
             &:hover {
                 cursor: pointer;
-                color:red;
-                border-bottom: 3px solid grey;
+                color:#ffba00;
+                border-bottom: 3px solid #ffba00;
             }
         }
     }

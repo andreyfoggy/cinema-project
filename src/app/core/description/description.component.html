@@ -27,11 +27,10 @@
     </div>
   </div>
   <div>
-    
-      <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
-        {{iframe_html}}
-      </div>
-      <div #trailer></div>
+    <div *ngIf="toggleTrailer" class="video" [innerHtml]="iframe_html" >
+      {{iframe_html}}
+    </div>
+    <div #trailer></div>
   </div>
   <div class="schedule wrapper" #ticket>
     <h1>Cinema Listings At Sun Cinema Kharkiv</h1>
@@ -52,19 +51,19 @@
         <img src={{film.poster}} alt="">
       </div>
       <div class="item-description">
-          <a class="item-title">{{film.name}}</a>
-          <span>Жанр: {{film.genre}}</span><br>
-          <span>Время:</span>
-          <ul  class="item-time" *ngFor="let time of film.sessions; let i = index;">
-            <li [routerLink]="'/tickets'"
-                [queryParams]="{ 
-                  time: i,
-                  date: date,
-                  film: film.name
-                }">
-                {{time}}
-            </li>
-          </ul>
+        <a class="item-title">{{film.name}}</a>
+        <span>Жанр: {{film.genre}}</span><br>
+        <span>Время:</span>
+        <ul  class="item-time" *ngFor="let time of film.sessions; let i = index;">
+          <li [routerLink]="'/tickets'"
+              [queryParams]="{ 
+                time: i,
+                date: date,
+                film: film.name
+              }">
+              {{time}}
+          </li>
+        </ul>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../shared/services/store.service';
 
 @Component({
@@ -15,7 +15,9 @@ export class BookTicketsComponent {
   public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
 
   constructor (private storeService: StoreService) {
+
   }
+
   public getChair(event) {
     if (event.reserve === true) {
       this.chooseTickets.push(event);
@@ -26,7 +28,6 @@ export class BookTicketsComponent {
         }
       });
     }
-
     this.canBuyTicket = this.chooseTickets.length > 0 ?  true : false;
   }
   public getSessionData(data) {
@@ -43,7 +44,12 @@ export class BookTicketsComponent {
 
     this.storeService.pushBookedTickets(sessionInfo);
   }
+
   private getChosenTickets(tickets) {
     return tickets.map( ticket => ticket.index);
+  }
+
+  public getFilmInfo (film) {
+    console.log (film);
   }
 }

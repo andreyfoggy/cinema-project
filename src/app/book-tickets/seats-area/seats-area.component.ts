@@ -3,6 +3,7 @@ import { Chair } from '../../shared/models/cinema.models';
 import { StoreService } from 'src/app/shared/services/store.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { MockService } from 'src/app/shared/services/mock.service';
 
 @Component({
   selector: 'app-seats-area',
@@ -12,21 +13,29 @@ import { ActivatedRoute } from '@angular/router';
 export class SeatsAreaComponent implements OnInit {
   @Output() chooseChair = new EventEmitter<object>();
   @Output() dataToSend = new EventEmitter<object>();
+  @Output() filmDescr = new EventEmitter<object>();
   public chair: Chair;
   public chairs = [];
   public rows = [];
   public storeReserve = [12, 14, 46];
+  public film: any;
 
-  constructor(private storeService: StoreService, private route: ActivatedRoute) {
+  constructor(private storeService: StoreService, private route: ActivatedRoute, private mock: MockService) {
+
   }
 
   ngOnInit() {
-      this.route.queryParams
-        .subscribe(params => {
-          const filmParams = params;
-          this.getSessions(filmParams);
-      });
+    this.route.queryParams
+      .subscribe(params => {
+        const filmParams = params;
+        this.getSessions(filmParams);
+        console.log (filmParams);
+    });
+    this.route.queryParams
+      .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));
+      this.filmDescr.emit( this.film );
   }
+
   public createChair () {
     let arrChair = 0;
     for (let i = 1; i < 8; i++ ) {
