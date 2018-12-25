@@ -48,4 +48,8 @@ export class BookTicketsComponent {
   private getChosenTickets(tickets) {
     return tickets.map( ticket => ticket.index);
   }
+
+  public getFilmInfo (film) {
+    console.log (film);
+  }
 }

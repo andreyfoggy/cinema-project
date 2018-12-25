@@ -13,6 +13,7 @@ import { MockService } from 'src/app/shared/services/mock.service';
 export class SeatsAreaComponent implements OnInit {
   @Output() chooseChair = new EventEmitter<object>();
   @Output() dataToSend = new EventEmitter<object>();
+  @Output() filmDescr = new EventEmitter<object>();
   public chair: Chair;
   public chairs = [];
   public rows = [];
@@ -30,9 +31,9 @@ export class SeatsAreaComponent implements OnInit {
         this.getSessions(filmParams);
         console.log (filmParams);
     });
-    this.route.params
+    this.route.queryParams
       .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));
-      console.log (this.film);
+      this.filmDescr.emit( this.film );
   }
 
   public createChair () {
