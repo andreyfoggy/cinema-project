@@ -8,6 +8,8 @@
     background-color: #ffba00;
     color: #000000;
     transition: .3s;
+    margin: 8px 2px;
+    
 
     .chair-num {
         transition: .3s;
@@ -27,4 +29,12 @@
 .cursor:hover {
     background-color: #ffba00;
     cursor: default;
+}
+
+@media screen and (max-width: 480px) {
+    .chair {
+        width: 20px;
+        height: 20px;
+        margin: 6px 4px;
+    }
 }

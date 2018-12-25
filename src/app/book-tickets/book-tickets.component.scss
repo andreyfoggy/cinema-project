@@ -3,21 +3,50 @@
     font-size: 18px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 60px 10px 0 10px;
 
     .film-description  {
-        width: 25%;
+        flex-grow: 1;
+        margin-top: 50px ;
+        text-align: center;
+      
+        .film-description__box {
+            font-size: 20px;
+            max-width: 300px;
+            width: 100%;
+            margin: 0 auto ;
+            padding: 10px 10px 20px 20px;
+            background: rgba(211, 206, 204, 0.7);
+
+            div {
+                margin-top: 5px;
+            }
+
+            .film-genre {
+                margin: 0 auto 20px;
+
+            }
+
+            .film-poster {
+                
+
+                img {
+                    max-width: 150px;
+                    width: 100%;
+                }
+            }
+        }
     }
 
     .seats-area {
-        width: 50%;
+        flex-grow: 2;
     }
 
     .box-info {
         width: 25%;
         margin: auto;
         
-
         .ticket-buy {
             padding: 20px 0 20px;
             border: 4px solid #ffa700;
@@ -54,4 +83,28 @@
             }
         }
     }
+}
+@media screen and (max-width: 1024px) {
+    .book-tickets {
+        flex-direction: column;
+        font-size: 16px;
+
+        .film-description  {
+            margin-top: 0;
+
+            .film-description__box {
+                font-size: 16px;
+            }
+        }
+
+        .seats-area {
+            margin-top: 50px;
+        }
+
+        .box-info {
+            margin: auto;
+            max-width: 400px;
+            width: 100%;
+        }
+    }  
 }

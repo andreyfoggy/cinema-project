@@ -1,11 +1,26 @@
-<app-header [search]="true"></app-header>
+<app-header></app-header>
 <section class="book-tickets">
     <div class="film-description">
-        <div>
-
-        </div>
-        <div>
-
+        <div class="film-description__box">
+            <div class="film-name">
+                <h3>{{film.name}}</h3>
+            </div>
+            <div class="film-genre">
+                <span>{{film.genre}}</span>
+            </div>
+            <div class="film-poster">
+                <img src="{{film.poster}}" alt="">
+            </div>
+            <div class="film-duration">
+                <span>Продолжительность: {{film.duration}}</span>
+            </div>
+            <div class="film-date">
+                <span>{{dataToSend.params.date}}</span>
+            </div>
+            <div class="film-time">
+                <i class="far fa-clock"> </i>
+                <span> {{film.sessions[dataToSend.params.time]}}</span>
+            </div>
         </div>
     </div>
     <app-seats-area class="seats-area"
@@ -19,8 +34,7 @@
             <div class="ticket-info" *ngFor="let chooseTicket of chooseTickets">
                 <div> <span>Ваш ряд: {{chooseTicket.row}}</span> </div>
                 <div> <span>Ваше место: {{chooseTicket.seat}}</span> </div>
-                <div><span>Стоимость: {{costTicket}} грн.</span></div>
-                {{chooseTicket.index}}
+                <div> <span>Стоимость: {{costTicket}} грн.</span> </div>
             </div>
             <div>
                 <span>Всего {{costTicket * chooseTickets.length}} грн. </span>

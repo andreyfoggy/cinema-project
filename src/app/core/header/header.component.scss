@@ -46,16 +46,18 @@ header {
     flex-wrap: nowrap;
   }
   button {
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
     color: #fff;
     font-size: 24px;
     transition: 0.4s;
     height: 30px;
     width: 30px;
-    background-color: #4b4643;
-    border-width: 0px;
   }
   button:hover {
     color: #FFB100;
+    cursor:pointer;
   }
   .search {
     position: relative;
