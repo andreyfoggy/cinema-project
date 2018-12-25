@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../shared/services/http.service';
-import { filmList } from '../shared/storage/film-list';
 import { MockService } from '../shared/services/mock.service';
 import { ActivatedRoute } from '@angular/router';
 
