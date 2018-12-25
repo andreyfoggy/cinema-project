@@ -187,7 +187,7 @@ export const filmList  = [
       backImg: 'https://wallpapershome.ru/images/pages/pic_h/17595.jpg',
       youtube: 'https://www.youtube.com/watch?v=YzKkMABpTtI',
       startDate: '02.12.2018',
-      endDate: '28.12.2018',
+      endDate: '29.12.2018',
       sessions: ['09:25', '14:10', '18:00'],
       id: 11
     },
