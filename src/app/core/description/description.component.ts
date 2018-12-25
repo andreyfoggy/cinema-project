@@ -51,6 +51,10 @@ export class DescriptionComponent implements OnInit {
       $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
   }
 
+  public checkDate(date, start, end) {
+    console.log(date, start, end);
+    return date >= start && date <= end;
+  }
   ngOnInit() {
     for (let d = 0; d < 5; d++) {
       this.days.push(this.getDay(d));

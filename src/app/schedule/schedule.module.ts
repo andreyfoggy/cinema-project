@@ -7,6 +7,7 @@ import { CoreModule } from '../core/core.module';
 import { BookTicketsModule } from '../book-tickets/book-tickets.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmbedVideo } from 'ngx-embed-video';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { EmbedVideo } from 'ngx-embed-video';
     CoreModule,
     BookTicketsModule,
     HttpClientModule,
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    SharedModule
   ],
   declarations: [
     ScheduleComponent,

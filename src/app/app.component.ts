@@ -8,7 +8,7 @@ import {standartBase} from './register/standartBaseUser';
 })
 export class AppComponent {
   title = 'Sun CINEMA';
-  constructor(){
+  constructor() {
     localStorage.setItem('userBase', JSON.stringify(standartBase));
     localStorage.setItem('userLogin', 'off');
   }

@@ -9,6 +9,7 @@ import { DescriptionComponent } from './description/description.component';
 import { FooterComponent } from './footer/footer.component';
 import {AuthorizationComponent} from '../authorization/authorization.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    SharedModule
   ],
   exports: [
       HeaderComponent,
