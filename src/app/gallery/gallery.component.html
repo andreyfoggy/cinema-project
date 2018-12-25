@@ -8,6 +8,7 @@
       <app-poster class="poster"
         [film]="film" 
         [routerLink]="['description', film.id]"
+        [queryParams]="{ date: date}"
       >
       </app-poster>
     </div>

@@ -10,23 +10,33 @@ import { MockService } from '../shared/services/mock.service';
 export class GalleryComponent implements OnInit {
   // private fullList = [];
   public filmList = [];
+  public fullList = [];
   public film: any;
   public sessionList$;
-
+  public date: string;
   constructor(private mock: MockService) {
-    // this.fullList = JSON.parse(JSON.stringify(this.filmList));
+
   }
 
   ngOnInit() {
     this.filmList = this.mock.getFilms();
+    this.fullList = this.mock.getFilms();
+    this.date = this.getParsedDate(new Date().getTime());
   }
 
-  // filterFilms(value) {
-  //   const searchQuery = value.toLowerCase();
-  //   this.filmList = JSON.parse(JSON.stringify(this.fullList));
-  //   this.filmList = this.filmList.filter((item) => {
-  //       const searchValue = item.title.toLowerCase();
-  //       return searchValue.indexOf(searchQuery) !== -1;
-  //   });
-  // }
+  filterFilms(value) {
+    const searchQuery = value.toLowerCase();
+    this.filmList = JSON.parse(JSON.stringify(this.fullList));
+    this.filmList = this.filmList.filter((item) => {
+        const searchValue = item.name.toLowerCase();
+        return searchValue.indexOf(searchQuery) !== -1;
+    });
+  }
+  private getParsedDate(millisconds) {
+    const date = new Date(millisconds);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${day}.${month}.${year}`;
+  }
 }

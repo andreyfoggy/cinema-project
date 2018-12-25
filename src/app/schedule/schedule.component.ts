@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MockService } from '../shared/services/mock.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule',
@@ -14,7 +14,7 @@ export class ScheduleComponent implements OnInit {
   private date: string;
   public days = [];
 
-  constructor(private mock: MockService, private route: ActivatedRoute) {
+  constructor(private mock: MockService, private route: ActivatedRoute, private router: Router) {
   }
   public getDay(day) {
     const weekDay = [ 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
@@ -30,12 +30,15 @@ export class ScheduleComponent implements OnInit {
     for (let d = 0; d < 5; d++) {
       this.days.push(this.getDay(d));
     }
-    this.date = this.days[0].param;
     this.filmList = this.mock.getFilms();
     this.fullList = this.mock.getFilms();
     this.route.queryParams.subscribe(dateParams => {
-      this.date = dateParams.date || this.date;
-      this.filterFilms(this.date);
+      if (dateParams.date) {
+        this.date = dateParams.date || this.date;
+        this.filterFilms(this.date);
+      } else {
+        this.router.navigate(['/schedule'], { queryParams: { date: this.days[0].param}});
+      }
     });
   }
 

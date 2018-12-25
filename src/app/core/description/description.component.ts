@@ -55,12 +55,14 @@ export class DescriptionComponent implements OnInit {
     for (let d = 0; d < 5; d++) {
       this.days.push(this.getDay(d));
     }
-    this.date = this.days[0].param;
     this.route.params
-      .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));
-
-    this.route.queryParams
-      .subscribe(dateParams => this.date = dateParams.date);
+      .subscribe(params => {
+        this.film = this.mock.getFilmById(Number(params['id']));
+        this.route.queryParams
+          .subscribe(dateParams => {
+            this.date = dateParams.date;
+          });
+      });
 
     this.iframe_html = this.embedService
       .embed(this.film.youtube, { query: { portrait: 0, color: '333' }, attr: { width: '100%', height: 450 } });
