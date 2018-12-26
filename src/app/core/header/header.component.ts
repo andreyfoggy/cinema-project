@@ -1,5 +1,4 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {standartBase} from '../../register/standartBaseUser';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public logoUrl = 'assets/images/logo.png';
-  stateWindowAuthorization: String = "none";
+  stateWindowAuthorization: String = 'none';
 
   ngOnInit() {
 
@@ -29,13 +28,12 @@ export class HeaderComponent implements OnInit {
   showWindowAuthorization() {
     if (this.stateWindowAuthorization === 'none') {
       this.stateWindowAuthorization = 'table';
-    }
-    else {
+    } else {
       this.stateWindowAuthorization = 'none';
     }
   }
 
   closeWindow() {
-    this.stateWindowAuthorization = "none";
+    this.stateWindowAuthorization = 'none';
   }
 }

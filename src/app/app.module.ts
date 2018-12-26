@@ -12,6 +12,7 @@ import { AppStoreModule } from './core/store/store.module';
 import { StoreService } from './shared/services/store.service';
 import { HttpService } from './shared/services/http.service';
 import { MockService } from './shared/services/mock.service';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 
@@ -30,7 +31,7 @@ import { MockService } from './shared/services/mock.service';
     EmbedVideo.forRoot(),
     AppStoreModule
   ],
-  providers: [StoreService, HttpService, MockService],
+  providers: [StoreService, HttpService, MockService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

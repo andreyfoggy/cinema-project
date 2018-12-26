@@ -13,7 +13,7 @@ export class BookTicketsComponent {
   public disabledChairs = [];
   public costTicket: Number = 90.00;
   public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
-  public film: object;
+  public film;
   public booked: boolean;
 
   constructor (private storeService: StoreService) {
