@@ -29,7 +29,6 @@ export class SeatsAreaComponent implements OnInit {
       .subscribe(params => {
         const filmParams = params;
         this.getSessions(filmParams);
-        console.log (filmParams);
     });
     this.route.queryParams
       .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));

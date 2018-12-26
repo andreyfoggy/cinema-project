@@ -27,7 +27,6 @@ import { MockService } from './shared/services/mock.service';
     GalleryModule,
     ScheduleModule,
     HttpClientModule,
-    CoreModule,
     EmbedVideo.forRoot(),
     AppStoreModule
   ],
