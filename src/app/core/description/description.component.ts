@@ -39,7 +39,6 @@ export class DescriptionComponent implements OnInit {
     return `${day}.${month}.${year}`;
   }
 
-
   public showTrailer ($element) {
     this.toggleTrailer = !this.toggleTrailer;
     if (this.toggleTrailer === true) {
@@ -52,6 +51,9 @@ export class DescriptionComponent implements OnInit {
   }
 
   public checkDate(date, start, end) {
+     start = start.split('.').reverse().join('');
+     date = date.split('.').reverse().join('');
+     end = end.split('.').reverse().join('');
     return date >= start && date <= end;
   }
   ngOnInit() {
