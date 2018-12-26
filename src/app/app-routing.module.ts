@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DescriptionComponent } from './core/description/description.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,9 @@ const routes: Routes = [
   {
     path: 'tickets',
     loadChildren: './book-tickets/book-tickets.module#BookTicketsModule'
+  },
+  {
+    path: 'description/:id', component: DescriptionComponent
   },
   {
     path: '**', redirectTo: 'gallery'

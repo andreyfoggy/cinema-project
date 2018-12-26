@@ -52,18 +52,21 @@
       </div>
       <div class="item-description">
         <a class="item-title">{{film.name}}</a>
-        <span>Жанр: {{film.genre}}</span><br>
-        <span>Время:</span>
-        <ul  class="item-time" *ngFor="let time of film.sessions; let i = index;">
-          <li [routerLink]="'/tickets'"
-              [queryParams]="{ 
-                time: i,
-                date: date,
-                film: film.name
-              }">
-              {{time}}
-          </li>
-        </ul>
+        <span>Жанр: {{film.genre}}</span>
+        <div *ngIf="checkDate(date, film.startDate, film.endDate)">
+          <span>Время:</span>
+          <ul  class="item-time" *ngFor="let time of film.sessions; let i = index;">
+            <li [routerLink]="'/tickets'"
+                [queryParams]="{ 
+                  time: i,
+                  date: date,
+                  film: film.name
+                }">
+                {{time}}
+            </li>
+          </ul>
+        </div>
+        <p>{{date | datePipe}}</p>
       </div>
     </div>
   </div>
