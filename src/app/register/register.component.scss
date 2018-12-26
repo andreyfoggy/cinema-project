@@ -1,8 +1,13 @@
 @import url(./fonts.css);
+.headerContent{
+  width: 100%;
+  min-width: 600px !important;
+}
 .registerContent{
  background-image: url("../../assets/images/body_bgn.png");
   background-size: cover;
   background-repeat: no-repeat;
+  min-width: 600px !important;
 }
 
 form{
