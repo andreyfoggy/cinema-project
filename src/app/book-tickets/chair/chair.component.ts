@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ChairComponent {
   @Input() chair: any;
+  @Input() canBuyTicket = true;
   @Output() chooseChair = new EventEmitter<object>();
 
   constructor() {
@@ -14,9 +15,12 @@ export class ChairComponent {
   }
 
   reserveSeat() {
-    // this.chair = {...this.chair, reserve = !reserse}
     if ( this.chair.disabled ) { return; }
     this.chair.reserve = !this.chair.reserve;
+    if (!this.canBuyTicket && this.chair.reserve ) {
+      this.chair.reserve = false;
+      return;
+    }
     this.chooseChair.emit(this.chair);
   }
 }

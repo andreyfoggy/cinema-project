@@ -13,6 +13,7 @@ export class SeatsAreaComponent implements OnInit {
   @Output() chooseChair = new EventEmitter<object>();
   @Output() dataToSend = new EventEmitter<object>();
   @Output() filmDescr = new EventEmitter<object>();
+  @Input() canBuyTicket = true;
   public chair: Chair;
   public chairs = [];
   public rows = [];
@@ -28,7 +29,6 @@ export class SeatsAreaComponent implements OnInit {
       .subscribe(params => {
         const filmParams = params;
         this.getSessions(filmParams);
-        console.log(params)
         this.film = this.mock.getFilmById(Number(params['id']));
         this.filmDescr.emit( this.film );
     });

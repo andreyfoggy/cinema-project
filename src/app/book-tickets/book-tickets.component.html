@@ -27,10 +27,11 @@
         (chooseChair)="getChair($event)"
         (dataToSend)="getSessionData($event)"
         (filmDescr)="getFilmInfo($event)"
+        [canBuyTicket]="canBuyTicket"
     >
     </app-seats-area>
     <div class="box-info" >
-        <div class="ticket-buy" *ngIf="canBuyTicket">
+        <div class="ticket-buy" *ngIf="hasTickets">
             <div class="ticket-info" *ngFor="let chooseTicket of chooseTickets">
                 <div> <span>Ваш ряд: {{chooseTicket.row}}</span> </div>
                 <div> <span>Ваше место: {{chooseTicket.seat}}</span> </div>
