@@ -110,13 +110,122 @@
     margin: auto;
 }
 
-.line {
-    margin-top: 20px;
-    width: 100%;
-    border-top: 3px solid #ff8800;
+.schedule {
+    margin-bottom: 20px;
+
+    .line {
+        margin-top: 20px;
+        width: 100%;
+        border-top: 3px solid #ff8800;
+    }
 }
 .item-description {
     p {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .descr {
+    
+        .descr-container {
+    
+            .film-name {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .descr {
+    
+        .descr-container {
+    
+            .film-name {
+                display: none;
+            }
+    
+            .block {
+                top: 60px;
+            }
+    
+            .trailer {
+                margin-bottom: 20px;
+            }
+    
+            .descr-box {
+                font-size: 14px;
+                position: relative;
+                margin: auto;
+                padding: 20px;
+                right: 0;
+                height: 520px;
+
+                .descr-box-up {
+    
+                    h3 {
+                        font-size: 16px;
+                        margin-bottom: 5px;
+                    }
+
+                    .poster {
+                    
+                        img {
+                            width: 120px;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    .genre {
+                        
+                        .cast {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .schedule-filter {
+        
+        .fas {
+            font-size: 22px;
+        }
+
+        li {
+            padding: 2px 1px;
+            
+            a {
+                font-size: 16px;
+                padding: 3px 5px;
+                
+            }
+        }
+    }
+
+    .schedule-item {
+        font-size: 16px;
+    
+        .item-image {
+            margin-right: 20px;
+    
+        }
+        .item-description {
+    
+            .item-time {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                width: 65px; 
+            }
+
+            .date-period {
+                display: none;
+            }
+        }
     }
 }

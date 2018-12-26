@@ -52,7 +52,6 @@ export class DescriptionComponent implements OnInit {
   }
 
   public checkDate(date, start, end) {
-    console.log(date, start, end);
     return date >= start && date <= end;
   }
   ngOnInit() {

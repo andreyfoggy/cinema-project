@@ -1,12 +1,106 @@
 footer {
-    display: flex;
-    justify-content: space-around;
     background: rgba(31,24,21,.80);
+    margin-top: 50px;
+
+    .itsfooter {
+        color: #bebdbd;
+        font-family: HelveticaNeueCyr,sans-serif;
+        font-size: 14px;
+        font-weight: 500;	
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+        
+        .logo {
+            font-weight: 400;
+        
+            img {
+                width: 70px;
+                height: auto;
+            }
+            
+            p {
+                margin-top: -6px;
+                font-size: 12px;
+                font-family: 'Fredoka One', cursive;
+                color: #FFB100;
+            }
+        }
+
+        .phone-mail {
+
+            a {
+                color: #bebdbd;
+                transition: .5s;
+            }
+
+            a:hover {
+                color: #ffa700;
+            }
+        }
+        
+        .social {
+            flex: 0 1 340px;
+
+            a {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background: #2c2c2c;
+                line-height: 48px;
+                margin-left: 4px;
+                color: #fefefe;
+                transition: .5s;
+            }
+
+            a:hover {
+                background: #ffa700;
+            }
+
+            i {
+                font-size: 20px;
+            }
+        }
+    }
 }
-img{
-    width: 70px;
+
+@media screen and (max-width: 768px) {
+    footer {
+        background: rgba(31,24,21,.80);
+        margin-top: 50px;
+    
+        .itsfooter {
+            flex-direction: column;
+		    flex-wrap: nowrap;
+		    height: 160px;
+            
+            .logo {
+                margin: 10px 0 10px;
+            
+                img {
+                    width: 70px;
+                    height: auto;
+                }
+                
+                p {
+                    margin-top: -6px;
+                    font-size: 12px;
+                    font-family: 'Fredoka One', cursive;
+                    color: #FFB100;
+                }
+            }
+
+            .place {
+                display: none;
+            }
+
+            .social {
+                margin: 10px 0 10px;
+            }
+        }
+    }
 }
-span{
-    color:wheat;
-   
-}
+    

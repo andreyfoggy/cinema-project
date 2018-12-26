@@ -5,6 +5,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 60px 10px 0 10px;
+    margin-bottom: 100px;
 
     .film-description  {
         flex-grow: 1;
@@ -94,6 +95,8 @@
 
             .film-description__box {
                 font-size: 16px;
+                max-width: 250px;
+                padding: 0;
             }
         }
 
