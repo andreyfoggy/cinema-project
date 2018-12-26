@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Chair } from '../../shared/models/cinema.models';
 import { StoreService } from 'src/app/shared/services/store.service';
-import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { MockService } from 'src/app/shared/services/mock.service';
 
@@ -29,7 +28,6 @@ export class SeatsAreaComponent implements OnInit {
       .subscribe(params => {
         const filmParams = params;
         this.getSessions(filmParams);
-        console.log (filmParams);
     });
     this.route.queryParams
       .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));

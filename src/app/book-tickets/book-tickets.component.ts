@@ -14,6 +14,7 @@ export class BookTicketsComponent {
   public costTicket: Number = 90.00;
   public dataToSend = {chairs: [], params: {time: null, date: null, film: null}};
   public film: object;
+  public booked: boolean;
 
   constructor (private storeService: StoreService) {
 
@@ -36,6 +37,7 @@ export class BookTicketsComponent {
   }
 
   makeOrder() {
+    this.booked = true;
     const sessionInfo = {
       time: Number(this.dataToSend.params.time),
       date: this.dataToSend.params.date,

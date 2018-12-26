@@ -39,7 +39,11 @@
             <div>
                 <span>Всего {{costTicket * chooseTickets.length}} грн. </span>
             </div>
-            <button (click)="makeOrder()"class='btn reserv-btn'>Купить</button>
+            <button *ngIf="!booked; else text"(click)="makeOrder()"class='btn reserv-btn'>Забронировать</button>
         </div>
     </div>
 </section>
+
+<ng-template #text>
+    <p>Забронировано!</p>
+</ng-template>
