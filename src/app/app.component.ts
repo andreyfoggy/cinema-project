@@ -15,7 +15,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const musor = document.querySelector('.cbalink');
-    musor.parentNode.removeChild(musor);
   }
 }
