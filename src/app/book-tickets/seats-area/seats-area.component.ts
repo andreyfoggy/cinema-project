@@ -28,10 +28,10 @@ export class SeatsAreaComponent implements OnInit {
       .subscribe(params => {
         const filmParams = params;
         this.getSessions(filmParams);
+        console.log(params)
+        this.film = this.mock.getFilmById(Number(params['id']));
+        this.filmDescr.emit( this.film );
     });
-    this.route.queryParams
-      .subscribe(params => this.film = this.mock.getFilmById(Number(params['id'])));
-      this.filmDescr.emit( this.film );
   }
 
   public createChair () {

@@ -53,6 +53,5 @@ export class BookTicketsComponent {
 
   public getFilmInfo (film) {
     this.film = film;
-    console.log(film);
   }
 }
