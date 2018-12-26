@@ -3,3 +3,22 @@
     width: 100%;
     border-top: 3px solid #ff8800;
 }
+
+@media screen and (max-width: 480px) {
+    .schedule-filter {
+        
+        .fas {
+            font-size: 22px;
+        }
+
+        li {
+            padding: 2px 1px;
+            
+            a {
+                font-size: 16px;
+                padding: 3px 5px;
+                
+            }
+        }
+    }
+}

@@ -188,3 +188,44 @@
         }
     }
 }
+
+@media screen and (max-width: 480px) {
+    .schedule-filter {
+        
+        .fas {
+            font-size: 22px;
+        }
+
+        li {
+            padding: 2px 1px;
+            
+            a {
+                font-size: 16px;
+                padding: 3px 5px;
+                
+            }
+        }
+    }
+
+    .schedule-item {
+        font-size: 16px;
+    
+        .item-image {
+            margin-right: 20px;
+    
+        }
+        .item-description {
+    
+            .item-time {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                width: 65px; 
+            }
+
+            .date-period {
+                display: none;
+            }
+        }
+    }
+}
